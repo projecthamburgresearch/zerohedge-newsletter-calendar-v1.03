@@ -31,7 +31,19 @@ const loadPublications = async (year: number, month: number): Promise<Publicatio
     const data = await import('@/data/publications.json');
     
     // Filter publications for the specified month
-    return data.publications.filter((pub: Publication) => {
+    return data.publications.map((pub: any): Publication => ({
+      date: pub.date,
+      dayOfWeek: pub.dayOfWeek,
+      source: pub.source,
+      seriesTitle: pub.seriesTitle,
+      domain: pub.domain,
+      author: pub.author,
+      newsletterType: pub.newsletterType,
+      primaryFocus: pub.primaryFocus,
+      specificTags: Array.isArray(pub.specificTags) ? pub.specificTags : pub.specificTags.split(',').map((t: string) => t.trim()),
+      previousYearReleased: typeof pub.previousYearReleased === 'boolean' ? pub.previousYearReleased : pub.previousYearRelease === 'Yes',
+      internetSourceSupport: typeof pub.internetSourceSupport === 'boolean' ? pub.internetSourceSupport : pub.internetSourceSupport === 'Yes'
+    })).filter((pub: Publication) => {
       const pubDate = new Date(pub.date);
       return pubDate.getFullYear() === year && pubDate.getMonth() === month;
     });
