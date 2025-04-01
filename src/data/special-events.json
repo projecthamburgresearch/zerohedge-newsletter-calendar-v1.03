@@ -1,0 +1,757 @@
+{
+  "specialEvents": [
+      {
+          "eventID": "quarterly-start",
+          "title": "Q2 2025 Beginning",
+          "startDate": "20250401",
+          "endDate": "20250401",
+          "description": "Start of second quarter 2025, featuring quarterly outlook publications",
+          "type": "Market Forecast",
+          "relatedSources": [
+              "Goldman",
+              "Morgan Stanley",
+              "JPM",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "rba-decision",
+          "title": "RBA Interest Rate Decision",
+          "startDate": "20250401",
+          "endDate": "20250401",
+          "description": "Reserve Bank of Australia announces interest rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ea-inflation",
+          "title": "Eurozone Inflation Flash",
+          "startDate": "20250401",
+          "endDate": "20250401",
+          "description": "Eurozone inflation rate year-over-year flash estimate for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "ECB",
+              "European banks"
+          ]
+      },
+      {
+          "eventID": "ism-manufacturing",
+          "title": "US ISM Manufacturing PMI",
+          "startDate": "20250401",
+          "endDate": "20250401",
+          "description": "US ISM Manufacturing Purchasing Managers Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "jolts-report",
+          "title": "US JOLTs Job Openings",
+          "startDate": "20250401",
+          "endDate": "20250401",
+          "description": "US Job Openings and Labor Turnover Survey for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "au-trade-balance",
+          "title": "Australia Trade Balance",
+          "startDate": "20250402",
+          "endDate": "20250402",
+          "description": "Australia's balance of trade figures for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ca-trade-balance",
+          "title": "Canada Trade Balance",
+          "startDate": "20250403",
+          "endDate": "20250403",
+          "description": "Canada's balance of trade figures for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ism-services",
+          "title": "US ISM Services PMI",
+          "startDate": "20250403",
+          "endDate": "20250403",
+          "description": "US ISM Services Purchasing Managers Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "us-employment",
+          "title": "US Employment Report",
+          "startDate": "20250404",
+          "endDate": "20250404",
+          "description": "Bureau of Labor Statistics releases US employment figures for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "ca-unemployment",
+          "title": "Canada Unemployment Rate",
+          "startDate": "20250404",
+          "endDate": "20250404",
+          "description": "Canada's unemployment rate for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "powell-speech",
+          "title": "Fed Chair Powell Speech",
+          "startDate": "20250404",
+          "endDate": "20250404",
+          "description": "Speech by Federal Reserve Chair Jerome Powell",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "All major banks"
+          ]
+      },
+      {
+          "eventID": "au-consumer-confidence",
+          "title": "Australia Westpac Consumer Confidence",
+          "startDate": "20250406",
+          "endDate": "20250406",
+          "description": "Westpac Consumer Confidence Change for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "de-trade-balance",
+          "title": "Germany Trade Balance",
+          "startDate": "20250407",
+          "endDate": "20250407",
+          "description": "Germany's balance of trade figures for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "fomc-preview",
+          "title": "FOMC Meeting Preview Week",
+          "startDate": "20250407",
+          "endDate": "20250411",
+          "description": "Week leading up to Federal Reserve April meeting, featuring preview publications",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA",
+              "Morgan Stanley"
+          ]
+      },
+      {
+          "eventID": "au-business-confidence",
+          "title": "Australia NAB Business Confidence",
+          "startDate": "20250407",
+          "endDate": "20250407",
+          "description": "National Australia Bank Business Confidence for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ca-ivey-pmi",
+          "title": "Canada Ivey PMI",
+          "startDate": "20250408",
+          "endDate": "20250408",
+          "description": "Canada's Ivey Purchasing Managers Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "jp-consumer-confidence",
+          "title": "Japan Consumer Confidence",
+          "startDate": "20250409",
+          "endDate": "20250409",
+          "description": "Japan's Consumer Confidence Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Japanese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "fomc-minutes",
+          "title": "FOMC Minutes Release",
+          "startDate": "20250409",
+          "endDate": "20250409",
+          "description": "Federal Reserve releases minutes from previous FOMC meeting",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "All major banks"
+          ]
+      },
+      {
+          "eventID": "cn-inflation",
+          "title": "China Inflation Rate",
+          "startDate": "20250409",
+          "endDate": "20250409",
+          "description": "China's inflation rate year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-inflation",
+          "title": "US Inflation Report (CPI)",
+          "startDate": "20250410",
+          "endDate": "20250410",
+          "description": "Bureau of Labor Statistics releases Consumer Price Index data for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "gb-gdp",
+          "title": "UK GDP Monthly",
+          "startDate": "20250411",
+          "endDate": "20250411",
+          "description": "United Kingdom's GDP month-over-month for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "UK banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-ppi",
+          "title": "US Producer Price Index",
+          "startDate": "20250411",
+          "endDate": "20250411",
+          "description": "US Producer Price Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "us-consumer-sentiment",
+          "title": "US Michigan Consumer Sentiment",
+          "startDate": "20250411",
+          "endDate": "20250411",
+          "description": "University of Michigan Consumer Sentiment preliminary for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "cn-trade-balance",
+          "title": "China Trade Balance",
+          "startDate": "20250412",
+          "endDate": "20250412",
+          "description": "China's balance of trade figures for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "rba-minutes",
+          "title": "RBA Meeting Minutes",
+          "startDate": "20250414",
+          "endDate": "20250414",
+          "description": "Reserve Bank of Australia releases minutes from previous meeting",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "gb-unemployment",
+          "title": "UK Unemployment Rate",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "United Kingdom's unemployment rate for February 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "UK banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "de-zew",
+          "title": "Germany ZEW Economic Sentiment",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "Germany's ZEW Economic Sentiment Index for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ca-inflation",
+          "title": "Canada Inflation Rate",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "Canada's inflation rate year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "cn-gdp",
+          "title": "China GDP Growth",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "China's GDP growth rate year-over-year for Q1 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "cn-industrial-production",
+          "title": "China Industrial Production",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "China's industrial production year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "cn-retail-sales",
+          "title": "China Retail Sales",
+          "startDate": "20250415",
+          "endDate": "20250415",
+          "description": "China's retail sales year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "gb-inflation",
+          "title": "UK Inflation Rate",
+          "startDate": "20250416",
+          "endDate": "20250416",
+          "description": "United Kingdom's inflation rate year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "UK banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-retail-sales",
+          "title": "US Retail Sales",
+          "startDate": "20250416",
+          "endDate": "20250416",
+          "description": "US retail sales month-over-month for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "boc-decision",
+          "title": "Bank of Canada Interest Rate Decision",
+          "startDate": "20250416",
+          "endDate": "20250416",
+          "description": "Bank of Canada announces interest rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "boc-monetary-policy",
+          "title": "Bank of Canada Monetary Policy Report",
+          "startDate": "20250416",
+          "endDate": "20250416",
+          "description": "Bank of Canada releases Monetary Policy Report",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "Canadian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "jp-trade-balance",
+          "title": "Japan Trade Balance",
+          "startDate": "20250416",
+          "endDate": "20250416",
+          "description": "Japan's balance of trade figures for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Japanese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "ecb-decision",
+          "title": "ECB Interest Rate Decision",
+          "startDate": "20250417",
+          "endDate": "20250417",
+          "description": "European Central Bank announces interest rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-housing-data",
+          "title": "US Housing Starts and Permits",
+          "startDate": "20250417",
+          "endDate": "20250417",
+          "description": "US housing starts and building permits for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "ecb-press-conference",
+          "title": "ECB Press Conference",
+          "startDate": "20250417",
+          "endDate": "20250417",
+          "description": "European Central Bank press conference following rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "jp-inflation",
+          "title": "Japan Inflation Rate",
+          "startDate": "20250417",
+          "endDate": "20250417",
+          "description": "Japan's inflation rate year-over-year for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Japanese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "de-pmi-flash",
+          "title": "Germany Manufacturing PMI Flash",
+          "startDate": "20250423",
+          "endDate": "20250423",
+          "description": "Germany's HCOB Manufacturing PMI flash for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "gb-pmi-flash",
+          "title": "UK PMI Flash",
+          "startDate": "20250423",
+          "endDate": "20250423",
+          "description": "United Kingdom's S&P Global PMI flash for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "UK banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "fomc-meeting",
+          "title": "Federal Reserve FOMC Meeting",
+          "startDate": "20250423",
+          "endDate": "20250424",
+          "description": "Federal Reserve monetary policy meeting with potential rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "All major banks"
+          ]
+      },
+      {
+          "eventID": "de-ifo",
+          "title": "Germany Ifo Business Climate",
+          "startDate": "20250424",
+          "endDate": "20250424",
+          "description": "Germany's Ifo Business Climate Index for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-durable-goods",
+          "title": "US Durable Goods Orders",
+          "startDate": "20250424",
+          "endDate": "20250424",
+          "description": "US durable goods orders month-over-month for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "us-existing-home-sales",
+          "title": "US Existing Home Sales",
+          "startDate": "20250424",
+          "endDate": "20250424",
+          "description": "US existing home sales for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "gb-retail-sales",
+          "title": "UK Retail Sales",
+          "startDate": "20250425",
+          "endDate": "20250425",
+          "description": "United Kingdom's retail sales month-over-month for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "UK banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "de-consumer-confidence",
+          "title": "Germany GfK Consumer Confidence",
+          "startDate": "20250429",
+          "endDate": "20250429",
+          "description": "Germany's GfK Consumer Confidence for May 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "es-gdp",
+          "title": "Spain GDP Flash",
+          "startDate": "20250429",
+          "endDate": "20250429",
+          "description": "Spain's GDP growth rate flash estimates for Q1 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-jolts",
+          "title": "US JOLTs Job Openings",
+          "startDate": "20250429",
+          "endDate": "20250429",
+          "description": "US Job Openings and Labor Turnover Survey for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "cn-pmi",
+          "title": "China PMI",
+          "startDate": "20250429",
+          "endDate": "20250429",
+          "description": "China's NBS and Caixin Manufacturing PMI for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Chinese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "month-end",
+          "title": "Month-End/May Preview",
+          "startDate": "20250428",
+          "endDate": "20250430",
+          "description": "End of month publications with May 2025 forecasts and outlooks",
+          "type": "Market Strategy",
+          "relatedSources": [
+              "Goldman",
+              "BofA",
+              "JPM",
+              "Morgan Stanley"
+          ]
+      },
+      {
+          "eventID": "eu-gdp-flash",
+          "title": "Eurozone GDP Flash",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "Eurozone and member countries' GDP flash estimates for Q1 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "eu-inflation-flash",
+          "title": "Eurozone Inflation Flash",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "Eurozone and member countries' inflation flash estimates for April 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "European banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "us-gdp",
+          "title": "US GDP Advance",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "US GDP growth rate advance estimate for Q1 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "us-personal-income",
+          "title": "US Personal Income and Spending",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "US personal income and spending for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "us-pce",
+          "title": "US PCE Price Index",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "US Personal Consumption Expenditures Price Index for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "JPM",
+              "Goldman",
+              "BofA"
+          ]
+      },
+      {
+          "eventID": "au-trade-balance-mar",
+          "title": "Australia Trade Balance March",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "Australia's balance of trade figures for March 2025",
+          "type": "Economic Data",
+          "relatedSources": [
+              "Australian banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "boj-decision",
+          "title": "Bank of Japan Interest Rate Decision",
+          "startDate": "20250430",
+          "endDate": "20250430",
+          "description": "Bank of Japan announces interest rate decision",
+          "type": "Central Bank Policy",
+          "relatedSources": [
+              "Japanese banks",
+              "Global research"
+          ]
+      },
+      {
+          "eventID": "1",
+          "date": "20250401",
+          "dayOfWeek": "Tuesday",
+          "type": "Market Holiday",
+          "title": "Good Friday",
+          "description": "Markets closed for Good Friday",
+          "relatedSources": [
+              "All Markets"
+          ],
+          "startDate": "20250401",
+          "endDate": "20250401"
+      },
+      {
+          "eventID": "earnings-season",
+          "title": "Q1 2025 Earnings Season Begins",
+          "startDate": "20250415",
+          "endDate": "20250430",
+          "description": "First quarter earnings reporting season intensifies, with major companies reporting results",
+          "type": "Corporate Earnings",
+          "relatedSources": [
+              "Goldman",
+              "JPM",
+              "BofA",
+              "Morgan Stanley"
+          ]
+      }
+  ]
+}

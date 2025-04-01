@@ -1,0 +1,198 @@
+{
+    "Session": "default",
+    "Sessions": {
+        "default": {
+            "SessionData": {
+                "1_1440x900": {
+                    "AnalysisLog": {
+                        "Dock Area": 8,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                        ]
+                    },
+                    "ArchitectWindow": {
+                        "Dock Area": 1,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                            "ProjectOverviewWidget",
+                            "EntityFilter"
+                        ]
+                    },
+                    "DockWidgets": {
+                        "FloatingWidgetOrder": [
+                        ],
+                        "OpenWindows": {
+                            "00SuggestionsBrowser": {
+                                "height": 478,
+                                "width": 250
+                            },
+                            "01ProjectOverviewWidget": {
+                                "height": 367,
+                                "width": 283
+                            },
+                            "02EntityFilter": {
+                                "height": 341,
+                                "width": 283
+                            },
+                            "03ArchitectWindow": {
+                                "height": 367,
+                                "width": 283
+                            },
+                            "04ProjectMetricsWidget": {
+                                "height": 225,
+                                "width": 1134
+                            },
+                            "05InfoBrowserWidget_0": {
+                                "height": 362,
+                                "width": 305
+                            }
+                        },
+                        "TabGroupFrontWidgets": [
+                            "EntityFilter"
+                        ]
+                    },
+                    "EntityFilter": {
+                        "Dock Area": 1,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                            "ProjectOverviewWidget",
+                            "ArchitectWindow"
+                        ]
+                    },
+                    "InfoBrowserWidget_0": {
+                        "Dock Area": 1,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                        ]
+                    },
+                    "ProjectMetricsWidget": {
+                        "Dock Area": 8,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                        ]
+                    },
+                    "ProjectOverviewWidget": {
+                        "Dock Area": 1,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                            "EntityFilter",
+                            "ArchitectWindow"
+                        ]
+                    },
+                    "SuggestionsBrowser": {
+                        "Dock Area": 2,
+                        "Dock In Drawer Mode": false,
+                        "Dock Is Floating": false,
+                        "Dock Tab Group": [
+                        ]
+                    }
+                },
+                "EntityFilter": {
+                    "LastEntityFilterUsed": "Files"
+                },
+                "GraphCustomizerTemporarySets": {
+                    "3": {
+                        "File Dependencies": {
+                            "Type=Arch ID=Directory Structure": {
+                                "3": {
+                                    "CreatedOn": "2025-04-01",
+                                    "DepKindStrings": "*",
+                                    "FormatVersion": 1,
+                                    "GraphStyle": "Classic",
+                                    "LastModifiedOn": "2025-04-01",
+                                    "Theme": "STI_SFDP",
+                                    "graphdisplay_center_x": 65,
+                                    "graphdisplay_center_y": 74,
+                                    "graphdisplay_overview_x": 10,
+                                    "graphdisplay_overview_y": 10,
+                                    "graphdisplay_zoom": 100,
+                                    "graphwindow_fitheight": false,
+                                    "graphwindow_fitwidth": false,
+                                    "graphwindow_radar": true,
+                                    "graphwindow_reuse": false,
+                                    "graphwindow_sync": false,
+                                    "window": {
+                                        "1_1440x900": {
+                                            "container": 1,
+                                            "height": 481,
+                                            "isMaximized": false,
+                                            "width": 883,
+                                            "x": 0,
+                                            "y": 0
+                                        }
+                                    }
+                                },
+                                "GraphRootName": "Directory Structure"
+                            }
+                        }
+                    }
+                },
+                "GraphWindowList": [
+                    "Graph:|:Unused:File Dependencies:|:Directory Structure:|:3:|:File Dependencies : Directory Structure"
+                ],
+                "GraphicFilterSettings": {
+                    "Enabled": false
+                },
+                "InfoBrowserWindowManager": {
+                    "InfoBrowserSyncKinds": {
+                        "0": [
+                            "Entities",
+                            "Architectures",
+                            "Commits",
+                            "Violations"
+                        ]
+                    }
+                },
+                "LastAccessedPid": "63963",
+                "LastDisplayGroup": "1_1440x900",
+                "MaintainEditorHistory": {
+                    "FileRanges": {
+                        "size": 0
+                    },
+                    "index": -1
+                },
+                "MiscSaveStates": {
+                    "entitySelected": "@l./components/ui/alert.tsx",
+                    "metricsBrowser": true,
+                    "metricsBrowserExpansionAddresses": "",
+                    "metricsBrowserSelectionAddress": "",
+                    "metricsBrowserSplitterState": "AAAA/wAAAAEAAAABAAACAAH/////AQAAAAEA",
+                    "projectOverviewCharts": "true",
+                    "projectOverviewChartsPosition": 1,
+                    "projectOverviewChartsSelected": "true",
+                    "projectOverviewChartsWorkspace": 0,
+                    "selection": "alert.tsx"
+                },
+                "ProjectMetricsBrowser": {
+                    "Overwrite": false,
+                    "SaveDirectory": "."
+                },
+                "ProjectUI": {
+                    "projectviewcuritem": "app"
+                },
+                "SplitWorkspace1SelectedTab": "",
+                "SplitWorkspace1Tabs": [
+                    "Graph:|:Unused:File Dependencies:|:Directory Structure:|:3:|:File Dependencies : Directory Structure"
+                ],
+                "SplittableWorkspace": {
+                    "active workspace": 0,
+                    "primary ws size": 883,
+                    "split orientation": -1
+                },
+                "projectconfigure": {
+                    "last config panel": "Languages"
+                },
+                "tags": {
+                    "expanded": [
+                    ]
+                }
+            }
+        }
+    }
+}

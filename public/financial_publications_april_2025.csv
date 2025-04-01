@@ -1,0 +1,332 @@
+Date,DayOfWeek,Source,SeriesTitle,Domain,Author,NewsletterType,PrimaryFocus,SpecificTags,PreviousYearRelease,InternetSourceSupport
+20250401,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
+20250401,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
+20250401,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available
+20250401,Tuesday,Goldman,US Economics Analyst,Investment Team,Jan Hatzius,Weekly,Economic Data,"economics,analyst,outlook",Yes,Available
+20250401,Tuesday,BofA,Global Fund Manager Survey,Market Analysis Team,Equity Strategy Group,Monthly,Investor Sentiment,"survey,fund manager,positioning",Yes,Available
+20250401,Tuesday,Morgan Stanley,Global Strategy Outlook,Research Team,Andrew Sheets,Quarterly,Market Forecast,"global,strategy,Q2 2025",Yes,Available
+20250401,Tuesday,Citi,Early Morning Thoughts,Research Team,Equity Research,Daily,Market Analysis,"early,thoughts,pre-market",Yes,Available
+20250401,Tuesday,Barclays,The Early Cut,Research Team,Research Division,Daily,Market Preview,"early,preview,trading",Yes,Available
+20250401,Tuesday,Credit Agricole,FX Daily,Research Team,FX Strategy Group,Daily,Currency Markets,"fx,daily,trends",Yes,Available
+20250401,Tuesday,JPM,US Market Intell Afternoon Briefing,Banking Team,Market Strategy Group,Daily,Market Recap,"afternoon,briefing,market moves",Yes,Available
+20250401,Tuesday,SocGen,Albert Edwards' Global Strategy,Research Team,Albert Edwards,Occasional,Contrarian View,"macro,strategy,bearish",Yes,Available
+20250401,Tuesday,MUFG,Daily Market Update,Research Team,Global Markets Division,Daily,Market Analysis,"daily,market,update",Yes,Available
+20250402,Wednesday,SocGen,Morning Briefing,Research Team,Equity Research,Daily,Market Analysis,"morning,briefing,strategy",Yes,Available
+20250402,Wednesday,Barclays,Americas Morning Research Summary,Research Team,Americas Research,Daily,Regional Focus,"americas,morning,summary",Yes,Available
+20250402,Wednesday,Barclays,European Morning Research Summary,Research Team,European Research,Daily,Regional Focus,"european,morning,summary",Yes,Available
+20250402,Wednesday,Goldman,European Economics Analyst,Investment Team,European Economics,Weekly,Economic Data,"european,economics,analyst",Yes,Available
+20250402,Wednesday,Morgan Stanley,Global FX Outlook,Research Team,FX Strategy,Weekly,Currency Markets,"fx,global,outlook",Yes,Available
+20250402,Wednesday,JPM,Asia Pacific Equity Research,Banking Team,APAC Research Group,Weekly,Regional Focus,"asia,pacific,equity",Yes,Available
+20250402,Wednesday,TS Lombard,Global Leading Indicators,Research Team,Macro Research Group,Monthly,Economic Data,"leading,indicators,global",Yes,Available
+20250402,Wednesday,ING,FX Daily,Research Team,FX Research,Daily,Currency Markets,"fx,daily,commentary",Yes,Available
+20250403,Thursday,Goldman,Markets,Investment Team,Lauren Rowe,Daily,Market Analysis,"markets,trading,equity",Yes,Available
+20250403,Thursday,Goldman,GS TMT SPEC SALES,Investment Team,TMT Research Group,Daily,Sector Focus,"tech,media,telecom",Yes,Available
+20250403,Thursday,Citi,Market Intelligence,Research Team,Markets Group,Daily,Market Analysis,"intelligence,market,recap",Yes,Available
+20250403,Thursday,Morgan Stanley,Equity Research Morning Notes,Research Team,Equity Research,Daily,Stock Analysis,"equity,morning,notes",Yes,Available
+20250403,Thursday,MUFG,Daily Market Update,Research Team,Markets Division,Daily,Market Analysis,"daily,update,trading",Yes,Available
+20250403,Thursday,JPM,US Economic Research Note,Banking Team,Economics Research,Weekly,Economic Data,"economic,research,US data",Yes,Available
+20250403,Thursday,Goldman,US Weekly Kickstart,Investment Team,David Kostin,Weekly,Market Strategy,"weekly,kickstart,positioning",Yes,Available
+20250403,Thursday,BofA,Global Research Highlights,Market Analysis Team,Global Research,Weekly,Research Focus,"global,highlights,research",Yes,Available
+20250403,Thursday,Credit Agricole,The Forex Corner,Research Team,FX Strategy,Weekly,Currency Markets,"forex,corner,strategy",Yes,Available
+20250403,Thursday,Barclays,European Credit Weekly,Research Team,Credit Research,Weekly,Fixed Income,"credit,european,weekly",Yes,Available
+20250403,Thursday,Mizuho,Global Markets Weekly,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,weekly",Yes,Available
+20250403,Thursday,DBS,Asian Insights,Research Team,Asian Markets,Weekly,Regional Focus,"asian,insights,emerging markets",Yes,Available
+20250404,Friday,JPM,International Market Intell Morning Briefing,Banking Team,Global Markets,Daily,Global Markets,"international,morning,briefing",Yes,Available
+20250404,Friday,Goldman,Market Intelligence US Morning Update,Investment Team,US Market Research,Daily,Market Analysis,"intelligence,morning,update",Yes,Available
+20250404,Friday,Goldman,GS TMT SPEC SALES,Investment Team,Sean Johnstone,Daily,Sector Focus,"tmt,sales,tech sector",Yes,Available
+20250404,Friday,BofA,Global Weekly Warrants,Market Analysis Team,Derivatives Research,Weekly,Derivatives,"warrants,weekly,options",Yes,Available
+20250404,Friday,Credit Agricole,Weekly FX Perspective,Research Team,FX Research Group,Weekly,Currency Markets,"fx,perspective,weekly",Yes,Available
+20250404,Friday,JPM,The Weekly FX,Banking Team,FX Strategy,Weekly,Currency Markets,"fx,weekly,currencies",Yes,Available
+20250404,Friday,Morgan Stanley,Cross-Asset Weekly,Research Team,Cross-Asset Strategy,Weekly,Multi-Asset,"cross-asset,weekly,allocation",Yes,Available
+20250404,Friday,Barclays,US Weekly Research Roundup,Research Team,Research Division,Weekly,Research Digest,"us,weekly,roundup",Yes,Available
+20250404,Friday,Citi,Chart of the Week,Research Team,Technical Analysis,Weekly,Market Technicals,"chart,technical,patterns",Yes,Available
+20250404,Friday,UniCredit,Weekly Credit Monitor,Research Team,Credit Research,Weekly,Fixed Income,"credit,monitor,spreads",Yes,Available
+20250404,Friday,SocGen,Weekly Market Review,Research Team,Market Strategy,Weekly,Market Recap,"weekly,review,summary",Yes,Available
+20250404,Friday,MUFG,Global Markets Update,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,update",Yes,Available
+20250404,Friday,Payrolls Preview,US Employment Report Preview,Research Team,Various Authors,Occasional,Economic Data,"payrolls,employment,labor",Yes,Available
+20250405,Saturday,JPM,Global Data Watch,Banking Team,Economic Research,Weekly,Economic Data,"global,data,watch",Yes,Available
+20250405,Saturday,JPM,US Weekly Prospects,Banking Team,US Economics,Weekly,Economic Outlook,"weekly,prospects,outlook",Yes,Available
+20250405,Saturday,UniCredit,The UniCredit Macro and Markets Weekly,Research Team,Macro Research,Weekly,Market Analysis,"macro,markets,weekly",Yes,Available
+20250405,Saturday,Other,Weekly FX Monitor,Research Team,Independent Research,Weekly,Currency Markets,"fx,monitor,weekly",Yes,Available
+20250405,Saturday,Other,Portfolio Strategy Weekly,Research Team,Strategy Team,Weekly,Investment Strategy,"portfolio,strategy,asset allocation",Yes,Available
+20250406,Sunday,Other,Global Week Ahead,Research Team,Economics Team,Weekly,Market Preview,"global,week ahead,preview",Yes,Available
+20250406,Sunday,Deutsche Bank,DB Commitment of Traders,Research Team,Markets Research,Weekly,Market Positioning,"commitment,traders,positioning",Yes,Available
+20250406,Sunday,One River,Weekend Notes,Research Team,Strategy Group,Weekly,Market Analysis,"weekend,notes,commentary",Yes,Available
+20250406,Sunday,Week Ahead,Global Markets Week Ahead,Research Team,Various Authors,Weekly,Market Preview,"week ahead,global,preview",Yes,Available
+20250407,Monday,JPM,Equity Strategy,Banking Team,Mislav Matejka,Weekly,Equity Markets,"strategy,equity,outlook",Yes,Available
+20250407,Monday,Goldman,FX Morning Thoughts,Investment Team,Victoria Hampson,Daily,Currency Markets,"fx,morning,thoughts",Yes,Available
+20250407,Monday,BofA,Global Research Highlights,Market Analysis Team,Research Team,Weekly,Research Digest,"global,research,highlights",Yes,Available
+20250407,Monday,Morgan Stanley,Global Strategy,Research Team,Strategy Group,Weekly,Market Strategy,"global,strategy,outlook",Yes,Available
+20250407,Monday,Credit Agricole,Weekly FX Compass,Research Team,FX Research,Weekly,Currency Markets,"fx,compass,weekly",Yes,Available
+20250407,Monday,JPM,US Fixed Income Markets Weekly,Banking Team,Fixed Income Research,Weekly,Bond Markets,"fixed income,markets,weekly",Yes,Available
+20250407,Monday,Goldman,Global Markets Daily,Investment Team,Markets Research,Daily,Market Analysis,"global,markets,daily",Yes,Available
+20250407,Monday,Citi,Monday Morning Musings,Research Team,Chief Strategist,Weekly,Market Outlook,"monday,musings,week ahead",Yes,Available
+20250407,Monday,BofA,Global Macro Daily,Market Analysis Team,Global Research,Daily,Macro Analysis,"macro,global,daily",Yes,Available
+20250407,Monday,Barclays,Early Morning FX,Research Team,FX Strategy,Daily,Currency Markets,"early,morning,fx",Yes,Available
+20250407,Monday,Deutsche Bank,Early Morning Reid,Research Team,Jim Reid,Daily,Market Commentary,"reid,morning,commentary",Yes,Available
+20250407,Monday,TS Lombard,Strategy Weekly,Research Team,Strategy Team,Weekly,Investment Strategy,"strategy,weekly,macro",Yes,Available
+20250407,Monday,Mizuho,US Rates Strategy,Research Team,Rates Team,Weekly,Interest Rates,"rates,strategy,bonds",Yes,Available
+20250407,Monday,J. Safra Sarasin,Weekly FX Update,Research Team,FX Research,Weekly,Currency Markets,"fx,update,weekly",Yes,Available
+20250408,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
+20250408,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
+20250408,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available
+20250408,Tuesday,Goldman,Asia Pacific Morning Summary,Investment Team,APAC Research,Daily,Regional Focus,"asia,morning,summary",Yes,Available
+20250408,Tuesday,BofA,Technical Strategy Daily,Market Analysis Team,Technical Analysis Group,Daily,Market Technicals,"technical,strategy,patterns",Yes,Available
+20250408,Tuesday,SocGen,US Rates Daily,Research Team,Rates Strategy,Daily,Interest Rates,"rates,us,daily",Yes,Available
+20250408,Tuesday,Citi,Early Morning Thoughts,Research Team,Equity Research,Daily,Market Analysis,"early,thoughts,pre-market",Yes,Available
+20250408,Tuesday,Barclays,The Early Cut,Research Team,Research Division,Daily,Market Preview,"early,preview,trading",Yes,Available
+20250408,Tuesday,Credit Agricole,FX Daily,Research Team,FX Strategy Group,Daily,Currency Markets,"fx,daily,trends",Yes,Available
+20250408,Tuesday,JPM,US Market Intell Afternoon Briefing,Banking Team,Market Strategy Group,Daily,Market Recap,"afternoon,briefing,market moves",Yes,Available
+20250408,Tuesday,MUFG,Daily Market Update,Research Team,Global Markets Division,Daily,Market Analysis,"daily,market,update",Yes,Available
+20250408,Tuesday,UniCredit,Economics Chartbook,Research Team,Economics Team,Monthly,Economic Data,"economics,chartbook,indicators",Yes,Available
+20250408,Tuesday,Rabobank,FX Market Update,Research Team,FX Strategy,Daily,Currency Markets,"fx,market,update",Yes,Available
+20250409,Wednesday,SocGen,Morning Briefing,Research Team,Equity Research,Daily,Market Analysis,"morning,briefing,strategy",Yes,Available
+20250409,Wednesday,Barclays,Americas Morning Research Summary,Research Team,Americas Research,Daily,Regional Focus,"americas,morning,summary",Yes,Available
+20250409,Wednesday,Barclays,European Morning Research Summary,Research Team,European Research,Daily,Regional Focus,"european,morning,summary",Yes,Available
+20250409,Wednesday,Goldman,Top of Mind,Investment Team,Global Research,Monthly,Thematic Research,"top of mind,global issues,spotlight",Yes,Available
+20250409,Wednesday,Morgan Stanley,Commodity Strategy,Research Team,Commodity Team,Weekly,Commodities,"commodity,strategy,markets",Yes,Available
+20250409,Wednesday,JPM,Global Asset Allocation,Banking Team,Multi-Asset Team,Weekly,Asset Allocation,"global,asset,allocation",Yes,Available
+20250409,Wednesday,Citi,Global Inflation Watch,Research Team,Inflation Research,Monthly,Economic Data,"inflation,global,watch",Yes,Available
+20250409,Wednesday,Credit Agricole,Credit Market Daily,Research Team,Credit Research,Daily,Fixed Income,"credit,market,spread",Yes,Available
+20250409,Wednesday,TME,Daily Market Brief,Research Team,Market Research,Daily,Market Analysis,"market,brief,daily",Yes,Available
+20250409,Wednesday,ING,FX Daily,Research Team,FX Research,Daily,Currency Markets,"fx,daily,commentary",Yes,Available
+20250409,Wednesday,FOMC Preview,April FOMC Meeting Preview,Research Team,Various Authors,Occasional,Central Bank Policy,"fomc,preview,fed",Yes,Available
+20250410,Thursday,Goldman,Markets,Investment Team,Lauren Rowe,Daily,Market Analysis,"markets,trading,equity",Yes,Available
+20250410,Thursday,Goldman,GS TMT SPEC SALES,Investment Team,TMT Research Group,Daily,Sector Focus,"tech,media,telecom",Yes,Available
+20250410,Thursday,Citi,Market Intelligence,Research Team,Markets Group,Daily,Market Analysis,"intelligence,market,recap",Yes,Available
+20250410,Thursday,Morgan Stanley,Equity Research Morning Notes,Research Team,Equity Research,Daily,Stock Analysis,"equity,morning,notes",Yes,Available
+20250410,Thursday,MUFG,Daily Market Update,Research Team,Markets Division,Daily,Market Analysis,"daily,update,trading",Yes,Available
+20250410,Thursday,JPM,US Economic Research Note,Banking Team,Economics Research,Weekly,Economic Data,"economic,research,US data",Yes,Available
+20250410,Thursday,BofA,Emerging Markets Weekly,Market Analysis Team,EM Research,Weekly,Emerging Markets,"emerging,markets,weekly",Yes,Available
+20250410,Thursday,Nomura,FX Weekly,Research Team,FX Strategy,Weekly,Currency Markets,"fx,weekly,currencies",Yes,Available
+20250410,Thursday,Evercore,Policy Insights,Research Team,Policy Research,Weekly,Policy Analysis,"policy,insights,government",Yes,Available
+20250410,Thursday,Barclays,Sustainable & Thematic Investing,Research Team,Thematic Research,Monthly,ESG,"sustainable,thematic,investing",Yes,Available
+20250410,Thursday,Mizuho,Global Markets Weekly,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,weekly",Yes,Available
+20250410,Thursday,DBS,Asian Insights,Research Team,Asian Markets,Weekly,Regional Focus,"asian,insights,emerging markets",Yes,Available
+20250410,Thursday,Credit Suisse,Global Equity Strategy,Research Team,Equity Strategy,Weekly,Equity Markets,"global,equity,strategy",Yes,Available
+20250411,Friday,JPM,International Market Intell Morning Briefing,Banking Team,Global Markets,Daily,Global Markets,"international,morning,briefing",Yes,Available
+20250411,Friday,Goldman,Market Intelligence US Morning Update,Investment Team,US Market Research,Daily,Market Analysis,"intelligence,morning,update",Yes,Available
+20250411,Friday,Goldman,GS TMT SPEC SALES,Investment Team,Sean Johnstone,Daily,Sector Focus,"tmt,sales,tech sector",Yes,Available
+20250411,Friday,BofA,Global Weekly Warrants,Market Analysis Team,Derivatives Research,Weekly,Derivatives,"warrants,weekly,options",Yes,Available
+20250411,Friday,Credit Agricole,Weekly FX Perspective,Research Team,FX Research Group,Weekly,Currency Markets,"fx,perspective,weekly",Yes,Available
+20250411,Friday,JPM,The Weekly FX,Banking Team,FX Strategy,Weekly,Currency Markets,"fx,weekly,currencies",Yes,Available
+20250411,Friday,Morgan Stanley,Cross-Asset Weekly,Research Team,Cross-Asset Strategy,Weekly,Multi-Asset,"cross-asset,weekly,allocation",Yes,Available
+20250411,Friday,Barclays,US Weekly Research Roundup,Research Team,Research Division,Weekly,Research Digest,"us,weekly,roundup",Yes,Available
+20250411,Friday,Citi,Chart of the Week,Research Team,Technical Analysis,Weekly,Market Technicals,"chart,technical,patterns",Yes,Available
+20250411,Friday,UniCredit,Weekly Credit Monitor,Research Team,Credit Research,Weekly,Fixed Income,"credit,monitor,spreads",Yes,Available
+20250411,Friday,J. Safra Sarasin,Sustainable Investment Weekly,Research Team,ESG Team,Weekly,ESG,"sustainable,esg,weekly",Yes,Available
+20250411,Friday,MUFG,Global Markets Update,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,update",Yes,Available
+20250411,Friday,Jefferies,Greed & Fear,Research Team,Christopher Wood,Weekly,Market Sentiment,"greed,fear,sentiment",Yes,Available
+20250411,Friday,CPI Preview,US Inflation Preview,Research Team,Various Authors,Occasional,Economic Data,"cpi,inflation,preview",Yes,Available
+20250412,Saturday,JPM,Global Data Watch,Banking Team,Economic Research,Weekly,Economic Data,"global,data,watch",Yes,Available
+20250412,Saturday,JPM,US Weekly Prospects,Banking Team,US Economics,Weekly,Economic Outlook,"weekly,prospects,outlook",Yes,Available
+20250412,Saturday,UniCredit,The UniCredit Macro and Markets Weekly,Research Team,Macro Research,Weekly,Market Analysis,"macro,markets,weekly",Yes,Available
+20250412,Saturday,Other,Weekly FX Monitor,Research Team,Independent Research,Weekly,Currency Markets,"fx,monitor,weekly",Yes,Available
+20250412,Saturday,Other,Fixed Income Weekly,Research Team,Bond Research,Weekly,Fixed Income,"fixed income,bonds,weekly",Yes,Available
+20250412,Saturday,Ned Davis,NDR Weekly,Research Team,Strategy Team,Weekly,Market Strategy,"ndr,weekly,indicators",Yes,Available
+20250413,Sunday,Other,Global Week Ahead,Research Team,Economics Team,Weekly,Market Preview,"global,week ahead,preview",Yes,Available
+20250413,Sunday,Deutsche Bank,DB Commitment of Traders,Research Team,Markets Research,Weekly,Market Positioning,"commitment,traders,positioning",Yes,Available
+20250413,Sunday,One River,Weekend Notes,Research Team,Strategy Group,Weekly,Market Analysis,"weekend,notes,commentary",Yes,Available
+20250413,Sunday,Week Ahead,Global Markets Week Ahead,Research Team,Various Authors,Weekly,Market Preview,"week ahead,global,preview",Yes,Available
+20250413,Sunday,TME,Sunday Strategist,Research Team,Strategy Team,Weekly,Investment Strategy,"sunday,strategist,outlook",Yes,Available
+20250414,Monday,JPM,Equity Strategy,Banking Team,Mislav Matejka,Weekly,Equity Markets,"strategy,equity,outlook",Yes,Available
+20250414,Monday,Goldman,FX Morning Thoughts,Investment Team,Victoria Hampson,Daily,Currency Markets,"fx,morning,thoughts",Yes,Available
+20250414,Monday,BofA,Global Research Highlights,Market Analysis Team,Research Team,Weekly,Research Digest,"global,research,highlights",Yes,Available
+20250414,Monday,Morgan Stanley,Global Strategy,Research Team,Strategy Group,Weekly,Market Strategy,"global,strategy,outlook",Yes,Available
+20250414,Monday,Credit Agricole,Weekly FX Compass,Research Team,FX Research,Weekly,Currency Markets,"fx,compass,weekly",Yes,Available
+20250414,Monday,JPM,US Fixed Income Markets Weekly,Banking Team,Fixed Income Research,Weekly,Bond Markets,"fixed income,markets,weekly",Yes,Available
+20250414,Monday,Goldman,Global Markets Daily,Investment Team,Markets Research,Daily,Market Analysis,"global,markets,daily",Yes,Available
+20250414,Monday,Citi,Monday Morning Musings,Research Team,Chief Strategist,Weekly,Market Outlook,"monday,musings,week ahead",Yes,Available
+20250414,Monday,BofA,Global Macro Daily,Market Analysis Team,Global Research,Daily,Macro Analysis,"macro,global,daily",Yes,Available
+20250414,Monday,Barclays,Early Morning FX,Research Team,FX Strategy,Daily,Currency Markets,"early,morning,fx",Yes,Available
+20250414,Monday,Deutsche Bank,Early Morning Reid,Research Team,Jim Reid,Daily,Market Commentary,"reid,morning,commentary",Yes,Available
+20250414,Monday,Nomura (McElligott),Cross-Asset Daily,Research Team,Charlie McElligott,Daily,Cross-Asset,"cross-asset,volatility,flows",Yes,Available
+20250414,Monday,RBC,Global Asset Allocation,Research Team,Asset Allocation,Weekly,Portfolio Strategy,"global,asset,allocation",Yes,Available
+20250414,Monday,SocGen,FX Market Pulse,Research Team,FX Strategy,Weekly,Currency Markets,"fx,market,pulse",Yes,Available
+20250414,Monday,HSBC,Global FX Strategy,Research Team,FX Team,Weekly,Currency Markets,"global,fx,strategy",Yes,Available
+20250415,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
+20250415,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
+20250415,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available
+20250415,Tuesday,Goldman,US Economics Analyst,Investment Team,Jan Hatzius,Weekly,Economic Data,"economics,analyst,outlook",Yes,Available
+20250415,Tuesday,BofA,Core Portfolio Changes,Market Analysis Team,Portfolio Strategy,Monthly,Portfolio Strategy,"core,portfolio,changes",Yes,Available
+20250415,Tuesday,Morgan Stanley,Global Asset Allocation Monthly,Research Team,Multi-Asset Team,Monthly,Asset Allocation,"global,asset,monthly",Yes,Available
+20250415,Tuesday,Citi,Early Morning Thoughts,Research Team,Equity Research,Daily,Market Analysis,"early,thoughts,pre-market",Yes,Available
+20250415,Tuesday,Barclays,The Early Cut,Research Team,Research Division,Daily,Market Preview,"early,preview,trading",Yes,Available
+20250415,Tuesday,Credit Agricole,FX Daily,Research Team,FX Strategy Group,Daily,Currency Markets,"fx,daily,trends",Yes,Available
+20250415,Tuesday,JPM,US Market Intell Afternoon Briefing,Banking Team,Market Strategy Group,Daily,Market Recap,"afternoon,briefing,market moves",Yes,Available
+20250415,Tuesday,MUFG,Daily Market Update,Research Team,Global Markets Division,Daily,Market Analysis,"daily,market,update",Yes,Available
+20250415,Tuesday,Jefferies,Earnings Season Preview,Research Team,Equity Research,Quarterly,Corporate Earnings,"earnings,preview,q1 2025",Yes,Available
+20250415,Tuesday,TS Lombard,Monthly Economic Outlook,Research Team,Economic Research,Monthly,Economic Forecast,"economic,outlook,monthly",Yes,Available
+20250416,Wednesday,SocGen,Morning Briefing,Research Team,Equity Research,Daily,Market Analysis,"morning,briefing,strategy",Yes,Available
+20250416,Wednesday,Barclays,Americas Morning Research Summary,Research Team,Americas Research,Daily,Regional Focus,"americas,morning,summary",Yes,Available
+20250416,Wednesday,Barclays,European Morning Research Summary,Research Team,European Research,Daily,Regional Focus,"european,morning,summary",Yes,Available
+20250416,Wednesday,Goldman,European Economics Analyst,Investment Team,European Economics,Weekly,Economic Data,"european,economics,analyst",Yes,Available
+20250416,Wednesday,Morgan Stanley,Global FX Outlook,Research Team,FX Strategy,Weekly,Currency Markets,"fx,global,outlook",Yes,Available
+20250416,Wednesday,JPM,Asia Pacific Equity Research,Banking Team,APAC Research Group,Weekly,Regional Focus,"asia,pacific,equity",Yes,Available
+20250416,Wednesday,BofA,Global Financial Stability Monitor,Market Analysis Team,Cross-Asset Research,Monthly,Financial Stability,"global,financial,stability",Yes,Available
+20250416,Wednesday,Credit Suisse,Global Investment Returns,Research Team,Investment Strategy,Quarterly,Investment Returns,"global,investment,returns",Yes,Available
+20250416,Wednesday,ING,FX Daily,Research Team,FX Research,Daily,Currency Markets,"fx,daily,commentary",Yes,Available
+20250416,Wednesday,HSBC,Global Equity Insights,Research Team,Equity Strategy,Weekly,Equity Markets,"equity,insights,global",Yes,Available
+20250416,Wednesday,Credit Agricole,Credit Market Daily,Research Team,Credit Research,Daily,Fixed Income,"credit,market,spread",Yes,Available
+20250416,Wednesday,TME,Daily Market Brief,Research Team,Market Research,Daily,Market Analysis,"market,brief,daily",Yes,Available
+20250417,Thursday,Goldman,Markets,Investment Team,Lauren Rowe,Daily,Market Analysis,"markets,trading,equity",Yes,Available
+20250417,Thursday,Goldman,GS TMT SPEC SALES,Investment Team,TMT Research Group,Daily,Sector Focus,"tech,media,telecom",Yes,Available
+20250417,Thursday,Citi,Market Intelligence,Research Team,Markets Group,Daily,Market Analysis,"intelligence,market,recap",Yes,Available
+20250417,Thursday,Morgan Stanley,Equity Research Morning Notes,Research Team,Equity Research,Daily,Stock Analysis,"equity,morning,notes",Yes,Available
+20250417,Thursday,MUFG,Daily Market Update,Research Team,Markets Division,Daily,Market Analysis,"daily,update,trading",Yes,Available
+20250417,Thursday,JPM,US Economic Research Note,Banking Team,Economics Research,Weekly,Economic Data,"economic,research,US data",Yes,Available
+20250417,Thursday,Goldman,US Weekly Kickstart,Investment Team,David Kostin,Weekly,Market Strategy,"weekly,kickstart,positioning",Yes,Available
+20250417,Thursday,BofA,Global Research Highlights,Market Analysis Team,Global Research,Weekly,Research Focus,"global,highlights,research",Yes,Available
+20250417,Thursday,Credit Agricole,The Forex Corner,Research Team,FX Strategy,Weekly,Currency Markets,"forex,corner,strategy",Yes,Available
+20250417,Thursday,Barclays,European Credit Weekly,Research Team,Credit Research,Weekly,Fixed Income,"credit,european,weekly",Yes,Available
+20250417,Thursday,Mizuho,Global Markets Weekly,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,weekly",Yes,Available
+20250417,Thursday,DBS,Asian Insights,Research Team,Asian Markets,Weekly,Regional Focus,"asian,insights,emerging markets",Yes,Available
+20250417,Thursday,Nomura,Asia Economic Monthly,Research Team,Asian Economics,Monthly,Economic Data,"asia,economic,monthly",Yes,Available
+20250417,Thursday,UBS,Global Equity Strategy,Research Team,Equity Strategy,Weekly,Equity Markets,"global,equity,strategy",Yes,Available
+20250418,Friday,JPM,International Market Intell Morning Briefing,Banking Team,Global Markets,Daily,Global Markets,"international,morning,briefing",Yes,Available
+20250418,Friday,Goldman,Market Intelligence US Morning Update,Investment Team,US Market Research,Daily,Market Analysis,"intelligence,morning,update",Yes,Available
+20250418,Friday,Goldman,GS TMT SPEC SALES,Investment Team,Sean Johnstone,Daily,Sector Focus,"tmt,sales,tech sector",Yes,Available
+20250418,Friday,BofA,Global Weekly Warrants,Market Analysis Team,Derivatives Research,Weekly,Derivatives,"warrants,weekly,options",Yes,Available
+20250418,Friday,Credit Agricole,Weekly FX Perspective,Research Team,FX Research Group,Weekly,Currency Markets,"fx,perspective,weekly",Yes,Available
+20250418,Friday,JPM,The Weekly FX,Banking Team,FX Strategy,Weekly,Currency Markets,"fx,weekly,currencies",Yes,Available
+20250418,Friday,Morgan Stanley,Cross-Asset Weekly,Research Team,Cross-Asset Strategy,Weekly,Multi-Asset,"cross-asset,weekly,allocation",Yes,Available
+20250418,Friday,Barclays,US Weekly Research Roundup,Research Team,Research Division,Weekly,Research Digest,"us,weekly,roundup",Yes,Available
+20250418,Friday,Citi,Chart of the Week,Research Team,Technical Analysis,Weekly,Market Technicals,"chart,technical,patterns",Yes,Available
+20250418,Friday,UniCredit,Weekly Credit Monitor,Research Team,Credit Research,Weekly,Fixed Income,"credit,monitor,spreads",Yes,Available
+20250418,Friday,SocGen,Weekly Market Review,Research Team,Market Strategy,Weekly,Market Recap,"weekly,review,summary",Yes,Available
+20250418,Friday,MUFG,Global Markets Update,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,update",Yes,Available
+20250418,Friday,BNP,Weekly Emerging Markets Pulse,Research Team,EM Research,Weekly,Emerging Markets,"emerging,markets,pulse",Yes,Available
+20250418,Friday,Goldman,Earnings Weekly,Investment Team,Earnings Research,Weekly,Corporate Earnings,"earnings,weekly,results",Yes,Available
+20250419,Saturday,JPM,Global Data Watch,Banking Team,Economic Research,Weekly,Economic Data,"global,data,watch",Yes,Available
+20250419,Saturday,JPM,US Weekly Prospects,Banking Team,US Economics,Weekly,Economic Outlook,"weekly,prospects,outlook",Yes,Available
+20250419,Saturday,UniCredit,The UniCredit Macro and Markets Weekly,Research Team,Macro Research,Weekly,Market Analysis,"macro,markets,weekly",Yes,Available
+20250419,Saturday,Other,Weekly FX Monitor,Research Team,Independent Research,Weekly,Currency Markets,"fx,monitor,weekly",Yes,Available
+20250419,Saturday,BMO,Global Asset Allocation Weekly,Research Team,Asset Allocation,Weekly,Multi-Asset,"global,asset,allocation",Yes,Available
+20250419,Saturday,Other,Earnings Tracker,Research Team,Equity Research,Weekly,Corporate Earnings,"earnings,tracker,season",Yes,Available
+20250420,Sunday,Other,Global Week Ahead,Research Team,Economics Team,Weekly,Market Preview,"global,week ahead,preview",Yes,Available
+20250420,Sunday,Deutsche Bank,DB Commitment of Traders,Research Team,Markets Research,Weekly,Market Positioning,"commitment,traders,positioning",Yes,Available
+20250420,Sunday,One River,Weekend Notes,Research Team,Strategy Group,Weekly,Market Analysis,"weekend,notes,commentary",Yes,Available
+20250420,Sunday,Week Ahead,Global Markets Week Ahead,Research Team,Various Authors,Weekly,Market Preview,"week ahead,global,preview",Yes,Available
+20250420,Sunday,Goldman,FOMC Preview for April Meeting,Investment Team,Economics Research,Occasional,Central Bank Policy,"fomc,preview,fed",Yes,Available
+20250421,Monday,JPM,Equity Strategy,Banking Team,Mislav Matejka,Weekly,Equity Markets,"strategy,equity,outlook",Yes,Available
+20250421,Monday,Goldman,FX Morning Thoughts,Investment Team,Victoria Hampson,Daily,Currency Markets,"fx,morning,thoughts",Yes,Available
+20250421,Monday,BofA,Global Research Highlights,Market Analysis Team,Research Team,Weekly,Research Digest,"global,research,highlights",Yes,Available
+20250421,Monday,Morgan Stanley,Global Strategy,Research Team,Strategy Group,Weekly,Market Strategy,"global,strategy,outlook",Yes,Available
+20250421,Monday,Credit Agricole,Weekly FX Compass,Research Team,FX Research,Weekly,Currency Markets,"fx,compass,weekly",Yes,Available
+20250421,Monday,JPM,US Fixed Income Markets Weekly,Banking Team,Fixed Income Research,Weekly,Bond Markets,"fixed income,markets,weekly",Yes,Available
+20250421,Monday,Goldman,Global Markets Daily,Investment Team,Markets Research,Daily,Market Analysis,"global,markets,daily",Yes,Available
+20250421,Monday,Citi,Monday Morning Musings,Research Team,Chief Strategist,Weekly,Market Outlook,"monday,musings,week ahead",Yes,Available
+20250421,Monday,BofA,Global Macro Daily,Market Analysis Team,Global Research,Daily,Macro Analysis,"macro,global,daily",Yes,Available
+20250421,Monday,Barclays,Early Morning FX,Research Team,FX Strategy,Daily,Currency Markets,"early,morning,fx",Yes,Available
+20250421,Monday,Deutsche Bank,Early Morning Reid,Research Team,Jim Reid,Daily,Market Commentary,"reid,morning,commentary",Yes,Available
+20250421,Monday,HSBC,Hedge Weekly,Research Team,Alternative Investments,Weekly,Hedge Funds,"hedge,weekly,alternative",Yes,Available
+20250421,Monday,Mizuho,US Rates Strategy,Research Team,Rates Team,Weekly,Interest Rates,"rates,strategy,bonds",Yes,Available
+20250421,Monday,FOMC Preview,April FOMC Meeting Preview,Research Team,Various Authors,Occasional,Central Bank Policy,"fomc,preview,fed",Yes,Available
+20250421,Monday,SocGen (Albert Edwards),Global Strategy Weekly,Research Team,Albert Edwards,Weekly,Contrarian View,"strategy,bearish,macro",Yes,Available
+20250422,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
+20250422,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
+20250422,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available
+20250422,Tuesday,Goldman,Asia Pacific Morning Summary,Investment Team,APAC Research,Daily,Regional Focus,"asia,morning,summary",Yes,Available
+20250422,Tuesday,BofA,Technical Strategy Daily,Market Analysis Team,Technical Analysis Group,Daily,Market Technicals,"technical,strategy,patterns",Yes,Available
+20250422,Tuesday,Citi,Early Morning Thoughts,Research Team,Equity Research,Daily,Market Analysis,"early,thoughts,pre-market",Yes,Available
+20250422,Tuesday,Barclays,The Early Cut,Research Team,Research Division,Daily,Market Preview,"early,preview,trading",Yes,Available
+20250422,Tuesday,Credit Agricole,FX Daily,Research Team,FX Strategy Group,Daily,Currency Markets,"fx,daily,trends",Yes,Available
+20250422,Tuesday,JPM,US Market Intell Afternoon Briefing,Banking Team,Market Strategy Group,Daily,Market Recap,"afternoon,briefing,market moves",Yes,Available
+20250422,Tuesday,MUFG,Daily Market Update,Research Team,Global Markets Division,Daily,Market Analysis,"daily,market,update",Yes,Available
+20250422,Tuesday,BofA,US Credit Strategy,Market Analysis Team,Credit Research,Weekly,Fixed Income,"credit,strategy,spreads",Yes,Available
+20250422,Tuesday,Rabobank,FX Market Update,Research Team,FX Strategy,Daily,Currency Markets,"fx,market,update",Yes,Available
+20250422,Tuesday,Morgan Stanley,US Thematic Strategy,Research Team,Thematic Research,Monthly,Investment Themes,"thematic,strategy,trends",Yes,Available
+20250423,Wednesday,SocGen,Morning Briefing,Research Team,Equity Research,Daily,Market Analysis,"morning,briefing,strategy",Yes,Available
+20250423,Wednesday,Barclays,Americas Morning Research Summary,Research Team,Americas Research,Daily,Regional Focus,"americas,morning,summary",Yes,Available
+20250423,Wednesday,Barclays,European Morning Research Summary,Research Team,European Research,Daily,Regional Focus,"european,morning,summary",Yes,Available
+20250423,Wednesday,Goldman,Portfolio Manager's Weekly,Investment Team,Portfolio Strategy,Weekly,Portfolio Construction,"portfolio,manager,positioning",Yes,Available
+20250423,Wednesday,Morgan Stanley,Commodity Strategy,Research Team,Commodity Team,Weekly,Commodities,"commodity,strategy,markets",Yes,Available
+20250423,Wednesday,JPM,Global Asset Allocation,Banking Team,Multi-Asset Team,Weekly,Asset Allocation,"global,asset,allocation",Yes,Available
+20250423,Wednesday,HSBC,Asian FX Insights,Research Team,Asian FX,Weekly,Currency Markets,"asian,fx,insights",Yes,Available
+20250423,Wednesday,Credit Agricole,Credit Market Daily,Research Team,Credit Research,Daily,Fixed Income,"credit,market,spread",Yes,Available
+20250423,Wednesday,TME,Daily Market Brief,Research Team,Market Research,Daily,Market Analysis,"market,brief,daily",Yes,Available
+20250423,Wednesday,ING,FX Daily,Research Team,FX Research,Daily,Currency Markets,"fx,daily,commentary",Yes,Available
+20250423,Wednesday,FOMC Meeting,April FOMC Meeting,Research Team,Various Authors,Occasional,Central Bank Policy,"fomc,meeting,fed",Yes,Available
+20250423,Wednesday,BlackRock,Global Investment Outlook,Research Team,Investment Strategy,Quarterly,Investment Strategy,"global,investment,outlook",Yes,Available
+20250424,Thursday,Goldman,Markets,Investment Team,Lauren Rowe,Daily,Market Analysis,"markets,trading,equity",Yes,Available
+20250424,Thursday,Goldman,GS TMT SPEC SALES,Investment Team,TMT Research Group,Daily,Sector Focus,"tech,media,telecom",Yes,Available
+20250424,Thursday,Citi,Market Intelligence,Research Team,Markets Group,Daily,Market Analysis,"intelligence,market,recap",Yes,Available
+20250424,Thursday,Morgan Stanley,Equity Research Morning Notes,Research Team,Equity Research,Daily,Stock Analysis,"equity,morning,notes",Yes,Available
+20250424,Thursday,MUFG,Daily Market Update,Research Team,Markets Division,Daily,Market Analysis,"daily,update,trading",Yes,Available
+20250424,Thursday,JPM,US Economic Research Note,Banking Team,Economics Research,Weekly,Economic Data,"economic,research,US data",Yes,Available
+20250424,Thursday,BofA,Emerging Markets Weekly,Market Analysis Team,EM Research,Weekly,Emerging Markets,"emerging,markets,weekly",Yes,Available
+20250424,Thursday,Credit Agricole,The Forex Corner,Research Team,FX Strategy,Weekly,Currency Markets,"forex,corner,strategy",Yes,Available
+20250424,Thursday,Barclays,European Credit Weekly,Research Team,Credit Research,Weekly,Fixed Income,"credit,european,weekly",Yes,Available
+20250424,Thursday,Mizuho,Global Markets Weekly,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,weekly",Yes,Available
+20250424,Thursday,DBS,Asian Insights,Research Team,Asian Markets,Weekly,Regional Focus,"asian,insights,emerging markets",Yes,Available
+20250424,Thursday,JPM,FOMC Meeting Takeaways,Banking Team,Fed Watch Team,Occasional,Central Bank Policy,"fomc,meeting,takeaways",Yes,Available
+20250424,Thursday,Goldman,FOMC Reaction,Investment Team,Economics Team,Occasional,Central Bank Policy,"fomc,reaction,fed",Yes,Available
+20250424,Thursday,BofA,Fed Watch,Market Analysis Team,Rates Strategy,Occasional,Central Bank Policy,"fed,watch,policy",Yes,Available
+20250425,Friday,JPM,International Market Intell Morning Briefing,Banking Team,Global Markets,Daily,Global Markets,"international,morning,briefing",Yes,Available
+20250425,Friday,Goldman,Market Intelligence US Morning Update,Investment Team,US Market Research,Daily,Market Analysis,"intelligence,morning,update",Yes,Available
+20250425,Friday,Goldman,GS TMT SPEC SALES,Investment Team,Sean Johnstone,Daily,Sector Focus,"tmt,sales,tech sector",Yes,Available
+20250425,Friday,BofA,Global Weekly Warrants,Market Analysis Team,Derivatives Research,Weekly,Derivatives,"warrants,weekly,options",Yes,Available
+20250425,Friday,Credit Agricole,Weekly FX Perspective,Research Team,FX Research Group,Weekly,Currency Markets,"fx,perspective,weekly",Yes,Available
+20250425,Friday,JPM,The Weekly FX,Banking Team,FX Strategy,Weekly,Currency Markets,"fx,weekly,currencies",Yes,Available
+20250425,Friday,Morgan Stanley,Cross-Asset Weekly,Research Team,Cross-Asset Strategy,Weekly,Multi-Asset,"cross-asset,weekly,allocation",Yes,Available
+20250425,Friday,Barclays,US Weekly Research Roundup,Research Team,Research Division,Weekly,Research Digest,"us,weekly,roundup",Yes,Available
+20250425,Friday,Citi,Chart of the Week,Research Team,Technical Analysis,Weekly,Market Technicals,"chart,technical,patterns",Yes,Available
+20250425,Friday,UniCredit,Weekly Credit Monitor,Research Team,Credit Research,Weekly,Fixed Income,"credit,monitor,spreads",Yes,Available
+20250425,Friday,SocGen,Weekly Market Review,Research Team,Market Strategy,Weekly,Market Recap,"weekly,review,summary",Yes,Available
+20250425,Friday,MUFG,Global Markets Update,Research Team,Global Markets,Weekly,Market Analysis,"global,markets,update",Yes,Available
+20250425,Friday,Goldman,Earnings Weekly,Investment Team,Earnings Research,Weekly,Corporate Earnings,"earnings,weekly,results",Yes,Available
+20250425,Friday,Morgan Stanley,FOMC Impact,Research Team,Fixed Income,Occasional,Central Bank Policy,"fomc,impact,markets",Yes,Available
+20250426,Saturday,JPM,Global Data Watch,Banking Team,Economic Research,Weekly,Economic Data,"global,data,watch",Yes,Available
+20250426,Saturday,JPM,US Weekly Prospects,Banking Team,US Economics,Weekly,Economic Outlook,"weekly,prospects,outlook",Yes,Available
+20250426,Saturday,UniCredit,The UniCredit Macro and Markets Weekly,Research Team,Macro Research,Weekly,Market Analysis,"macro,markets,weekly",Yes,Available
+20250426,Saturday,Other,Weekly FX Monitor,Research Team,Independent Research,Weekly,Currency Markets,"fx,monitor,weekly",Yes,Available
+20250426,Saturday,Ned Davis,NDR Weekly,Research Team,Strategy Team,Weekly,Market Strategy,"ndr,weekly,indicators",Yes,Available
+20250426,Saturday,Other,Month-End Preview,Research Team,Market Strategy,Monthly,Market Outlook,"month-end,preview,may",Yes,Available
+20250427,Sunday,Other,Global Week Ahead,Research Team,Economics Team,Weekly,Market Preview,"global,week ahead,preview",Yes,Available
+20250427,Sunday,Deutsche Bank,DB Commitment of Traders,Research Team,Markets Research,Weekly,Market Positioning,"commitment,traders,positioning",Yes,Available
+20250427,Sunday,One River,Weekend Notes,Research Team,Strategy Group,Weekly,Market Analysis,"weekend,notes,commentary",Yes,Available
+20250427,Sunday,Week Ahead,Global Markets Week Ahead,Research Team,Various Authors,Weekly,Market Preview,"week ahead,global,preview",Yes,Available
+20250427,Sunday,TME,Sunday Strategist,Research Team,Strategy Team,Weekly,Investment Strategy,"sunday,strategist,outlook",Yes,Available
+20250427,Sunday,Other,May 2025 Investment Outlook,Research Team,Strategy Team,Monthly,Investment Strategy,"may,investment,outlook",Yes,Available
+20250428,Monday,JPM,Equity Strategy,Banking Team,Mislav Matejka,Weekly,Equity Markets,"strategy,equity,outlook",Yes,Available
+20250428,Monday,Goldman,FX Morning Thoughts,Investment Team,Victoria Hampson,Daily,Currency Markets,"fx,morning,thoughts",Yes,Available
+20250428,Monday,BofA,Global Research Highlights,Market Analysis Team,Research Team,Weekly,Research Digest,"global,research,highlights",Yes,Available
+20250428,Monday,Morgan Stanley,Global Strategy,Research Team,Strategy Group,Weekly,Market Strategy,"global,strategy,outlook",Yes,Available
+20250428,Monday,Credit Agricole,Weekly FX Compass,Research Team,FX Research,Weekly,Currency Markets,"fx,compass,weekly",Yes,Available
+20250428,Monday,JPM,US Fixed Income Markets Weekly,Banking Team,Fixed Income Research,Weekly,Bond Markets,"fixed income,markets,weekly",Yes,Available
+20250428,Monday,Goldman,Global Markets Daily,Investment Team,Markets Research,Daily,Market Analysis,"global,markets,daily",Yes,Available
+20250428,Monday,Citi,Monday Morning Musings,Research Team,Chief Strategist,Weekly,Market Outlook,"monday,musings,week ahead",Yes,Available
+20250428,Monday,BofA,Global Macro Daily,Market Analysis Team,Global Research,Daily,Macro Analysis,"macro,global,daily",Yes,Available
+20250428,Monday,Barclays,Early Morning FX,Research Team,FX Strategy,Daily,Currency Markets,"early,morning,fx",Yes,Available
+20250428,Monday,Deutsche Bank,Early Morning Reid,Research Team,Jim Reid,Daily,Market Commentary,"reid,morning,commentary",Yes,Available
+20250428,Monday,RBC,Global Asset Allocation,Research Team,Asset Allocation,Weekly,Portfolio Strategy,"global,asset,allocation",Yes,Available
+20250428,Monday,Mizuho,US Rates Strategy,Research Team,Rates Team,Weekly,Interest Rates,"rates,strategy,bonds",Yes,Available
+20250428,Monday,J. Safra Sarasin,Weekly FX Update,Research Team,FX Research,Weekly,Currency Markets,"fx,update,weekly",Yes,Available
+20250429,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
+20250429,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
+20250429,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available
+20250429,Tuesday,Goldman,US Economics Analyst,Investment Team,Jan Hatzius,Weekly,Economic Data,"economics,analyst,outlook",Yes,Available
+20250429,Tuesday,BofA,Month-End Strategy,Market Analysis Team,Strategy Team,Monthly,Market Strategy,"month-end,strategy,positioning",Yes,Available
+20250429,Tuesday,Citi,Early Morning Thoughts,Research Team,Equity Research,Daily,Market Analysis,"early,thoughts,pre-market",Yes,Available
+20250429,Tuesday,Barclays,The Early Cut,Research Team,Research Division,Daily,Market Preview,"early,preview,trading",Yes,Available
+20250429,Tuesday,Credit Agricole,FX Daily,Research Team,FX Strategy Group,Daily,Currency Markets,"fx,daily,trends",Yes,Available
+20250429,Tuesday,JPM,US Market Intell Afternoon Briefing,Banking Team,Market Strategy Group,Daily,Market Recap,"afternoon,briefing,market moves",Yes,Available
+20250429,Tuesday,MUFG,Daily Market Update,Research Team,Global Markets Division,Daily,Market Analysis,"daily,market,update",Yes,Available
+20250429,Tuesday,Morgan Stanley,Month-End Investment Perspectives,Research Team,CIO Office,Monthly,Investment Strategy,"month-end,investment,perspectives",Yes,Available
+20250429,Tuesday,Goldman,Month Ahead Preview,Investment Team,Global Research,Monthly,Market Preview,"month,ahead,preview",Yes,Available
+20250429,Tuesday,Nomura (McElligott),Monthly Flows & Positioning,Research Team,Charlie McElligott,Monthly,Market Positioning,"flows,positioning,monthly",Yes,Available
+20250430,Wednesday,SocGen,Morning Briefing,Research Team,Equity Research,Daily,Market Analysis,"morning,briefing,strategy",Yes,Available
+20250430,Wednesday,Barclays,Americas Morning Research Summary,Research Team,Americas Research,Daily,Regional Focus,"americas,morning,summary",Yes,Available
+20250430,Wednesday,Barclays,European Morning Research Summary,Research Team,European Research,Daily,Regional Focus,"european,morning,summary",Yes,Available
+20250430,Wednesday,Goldman,European Economics Analyst,Investment Team,European Economics,Weekly,Economic Data,"european,economics,analyst",Yes,Available
+20250430,Wednesday,Morgan Stanley,Global FX Outlook,Research Team,FX Strategy,Weekly,Currency Markets,"fx,global,outlook",Yes,Available
+20250430,Wednesday,JPM,Asia Pacific Equity Research,Banking Team,APAC Research Group,Weekly,Regional Focus,"asia,pacific,equity",Yes,Available
+20250430,Wednesday,Citi,Monthly Market Review,Research Team,Markets Group,Monthly,Market Recap,"monthly,market,review",Yes,Available
+20250430,Wednesday,BofA,Asset Allocation Monthly,Market Analysis Team,Global Asset Allocation,Monthly,Asset Allocation,"asset,allocation,monthly",Yes,Available
+20250430,Wednesday,ING,FX Daily,Research Team,FX Research,Daily,Currency Markets,"fx,daily,commentary",Yes,Available
+20250430,Wednesday,Credit Agricole,Monthly Economic Outlook,Research Team,Economic Research,Monthly,Economic Forecast,"monthly,economic,outlook",Yes,Available
+20250430,Wednesday,UBS,Monthly Investment Strategy,Research Team,Investment Office,Monthly,Investment Strategy,"monthly,investment,strategy",Yes,Available
+20250430,Wednesday,Goldman,Monthly Chartbook,Investment Team,Strategy Team,Monthly,Market Visuals,"monthly,chartbook,visual",Yes,Available
+20250430,Wednesday,Barclays,Global Outlook,Research Team,Research Division,Monthly,Market Forecast,"global,outlook,monthly",Yes,Available
+20250430,Wednesday,JPM,Asset Allocation Views,Banking Team,Multi-Asset Team,Monthly,Asset Allocation,"asset,allocation,views",Yes,Available
+20250430,Wednesday,Morgan Stanley,Monthly Strategy Playbook,Research Team,Strategy Team,Monthly,Market Strategy,"monthly,strategy,playbook",Yes,Available

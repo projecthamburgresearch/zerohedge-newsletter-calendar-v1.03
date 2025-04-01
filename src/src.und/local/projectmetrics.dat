@@ -1,0 +1,20 @@
+{
+    "fileMetrics": "file,Code Lines\nutils/dateUtils.ts,126\ncomponents/modals/EventModal.tsx,50\ncomponents/FooterStats.tsx,35\ntypes/index.ts,65\ndata/index.ts,0\nutils/uiUtils.ts,11\napp/layout.tsx,17\ncomponents/CalendarCell.tsx,172\napp/page.tsx,9\nutils/statsUtils.ts,38\ncomponents/CalendarGrid.tsx,47\nhooks/usePopupPosition.ts,39\ncomponents/FinancialCalendar.tsx,167\ncomponents/ui/alert.tsx,19\ncomponents/modals/PublicationModal.tsx,76\nutils/eventHandlers.ts,67\ncomponents/CalendarFilters.tsx,81\nutils/calendarData.ts,63\napp/globals.css,0\nhooks/useCalendarState.ts,112\ntypes/json.d.ts,4\nhooks/usePublicationFilters.ts,46\ncomponents/ListView.tsx,155\nutils/publicationUtils.ts,39\ncomponents/modals/BaseModal.tsx,31",
+    "funcTop10": "function,cyclomatic\nusePublicationFilters.filteredPublications.(unnamed_function_1),7\ngetTypeColor,6\nListView.(unnamed_function_6),5\nPublicationModal.renderTags,5\ngetPublicationStats.(unnamed_function_1),5\ngetMonthDays,4\ngetWeekNumber,4\nhandlePopupPosition.(unnamed_function_1),4\nCalendarCell,3\nCalendarCell.(unnamed_function_1).(unnamed_function_2),3\nFinancialCalendar,3\nListView.(unnamed_function_6).(unnamed_function_7),3\nListView.allItems.(unnamed_function_5),3\nuseCalendarState.handleNextMonth.(unnamed_function_4),3\nuseCalendarState.handlePreviousMonth.(unnamed_function_3),3\nusePopupPosition.calculatePopupPosition.(unnamed_function_1).adjustPositionForViewport,3\ngetMonthDays,3",
+    "languages": "Web",
+    "metricsVersion": 3,
+    "parsetime": 1743539376,
+    "summaryMetric/CountAnalysisError": 8,
+    "summaryMetric/CountAnalysisWarning": 8,
+    "summaryMetric/CountDeclClass": 0,
+    "summaryMetric/CountDeclFile": 25,
+    "summaryMetric/CountDeclFunction": 148,
+    "summaryMetric/CountLine": 1861,
+    "summaryMetric/CountLineBlank": 194,
+    "summaryMetric/CountLineCode": 1469,
+    "summaryMetric/CountLineComment": 201,
+    "summaryMetric/CountStmtDecl": 373,
+    "summaryMetric/CountStmtExe": 275,
+    "summaryMetric/RatioCommentToCode": 0.14,
+    "summaryMetrics": "Name,Value\nClasses,0\nFiles,25\nFunctions,148\nLines,1861\nBlank Lines,194\nCode Lines,1469\nComment Lines,201\nDeclarative Statements,373\nExecutable Statements,275\nComment to Code Ratio,0.14\n"
+}
