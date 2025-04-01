@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CalendarState, CalendarFilters, CalendarMonth, Publication, SpecialEvent } from '@/types';
+import { CalendarState, CalendarFilters, CalendarMonth, Publication, Event } from '@/types';
 import { loadMonthData } from '@/utils/calendarData';
 import { getWeekOptions, groupPublicationsBySource } from '@/utils/dateUtils';
 
@@ -18,7 +18,7 @@ interface UseCalendarStateReturn {
   handleSourceFilterChange: (value: string | null) => void;
   handleTypeFilterChange: (value: string | null) => void;
   handlePublicationSelect: (publication: Publication | null) => void;
-  handleEventSelect: (event: SpecialEvent | null) => void;
+  handleEventSelect: (event: Event | null) => void;
 }
 
 /**
@@ -35,13 +35,16 @@ export const useCalendarState = ({
     selectedDate: null,
     selectedPublication: null,
     selectedEvent: null,
+    dayFilter: null,
     weekFilter: null,
     sourceFilter: null,
-    typeFilter: null
+    typeFilter: null,
+    viewMode: 'calendar'
   });
 
   // Calendar filters
   const [filters, setFilters] = useState<CalendarFilters>({
+    dayOptions: [],
     weekOptions: [],
     sourceOptions: [],
     typeOptions: []
@@ -64,8 +67,9 @@ export const useCalendarState = ({
 
       // Update filters
       setFilters({
+        dayOptions: [],
         weekOptions: getWeekOptions(state.currentYear, state.currentMonth),
-        sourceOptions: groupPublicationsBySource(monthData.publications),
+        sourceOptions: monthData.publications.map(pub => pub.source).filter((v, i, a) => a.indexOf(v) === i),
         typeOptions: Array.from(new Set(monthData.events.map(event => event.type)))
       });
     };
@@ -120,7 +124,7 @@ export const useCalendarState = ({
     setState(prev => ({ ...prev, selectedPublication: publication }));
   };
 
-  const handleEventSelect = (event: SpecialEvent | null) => {
+  const handleEventSelect = (event: Event | null) => {
     setState(prev => ({ ...prev, selectedEvent: event }));
   };
 
