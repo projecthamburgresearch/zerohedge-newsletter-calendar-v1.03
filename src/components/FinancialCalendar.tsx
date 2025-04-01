@@ -9,6 +9,7 @@ import { getDayOptions, getWeekOptions } from '@/utils/dateUtils';
 import { PublicationModal } from './modals/PublicationModal';
 import { EventModal } from './modals/EventModal';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // Import the JSON data directly
 import publicationsJson from '../data/publications.json';
@@ -19,6 +20,7 @@ const publicationsData = (publicationsJson as any).publications as Publication[]
 const specialEventsData = (specialEventsJson as any).specialEvents as Event[];
 
 export const FinancialCalendar: React.FC = () => {
+  const router = useRouter();
   const [isGridView, setIsGridView] = useState(true);
   const [dayFilter, setDayFilter] = useState<string | null>(null);
   const [weekFilter, setWeekFilter] = useState<string | null>(null);
@@ -76,12 +78,12 @@ export const FinancialCalendar: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 space-y-4">
+    <div className="container mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
           <div className="h-12">
             <Image
-              src="/assets/logos/Zerohedgelogo.svg"
+              src={`${process.env.NODE_ENV === 'production' ? '/zerohedge-newsletter-calendar-v1.02' : ''}/assets/logos/Zerohedgelogo.svg`}
               alt="Zerohedge Logo"
               width={48}
               height={48}
