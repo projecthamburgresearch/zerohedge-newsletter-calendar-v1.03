@@ -27,24 +27,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: List files
-        run: ls -la
-        
       - name: Install dependencies
-        run: |
-          echo "Installing dependencies..."
-          npm ci
-        
-      - name: Check package.json
-        run: cat package.json
+        run: npm ci
 
-      - name: Build and export
-        run: |
-          echo "Starting build..."
-          npm run export
-        
-      - name: List build output
-        run: ls -la out/
+      - name: Build
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
