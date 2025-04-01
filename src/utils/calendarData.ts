@@ -1,62 +1,80 @@
-import { Publication, SpecialEvent, CalendarMonth } from '@/types';
+import { Publication, Event, CalendarMonth } from '@/types';
 
 /**
  * Loads calendar data for a specific month
  */
 export const loadMonthData = async (year: number, month: number): Promise<CalendarMonth> => {
+  // Load publications data
+  const publications = await loadPublications(year, month);
+  
+  // Load events data
+  const events = await loadEvents(year, month);
+
+  // Generate calendar days
+  const days = generateCalendarDays(year, month);
+
+  return {
+    year,
+    month,
+    days,
+    publications,
+    events
+  };
+};
+
+/**
+ * Load publications for a specific month
+ */
+const loadPublications = async (year: number, month: number): Promise<Publication[]> => {
   try {
-    // Load publications for the month
-    const publications = await import(`@/data/${year}/${month + 1}/publications.json`)
-      .then(module => module.default as Publication[])
-      .catch(() => [] as Publication[]);
-
-    // Load events for the month
-    const events = await import(`@/data/${year}/${month + 1}/events.json`)
-      .then(module => module.default as SpecialEvent[])
-      .catch(() => [] as SpecialEvent[]);
-
-    // Get days for the month
-    const days = getMonthDays(year, month);
-
-    return {
-      year,
-      month,
-      days,
-      publications,
-      events
-    };
+    // Import the publications data
+    const data = await import('@/data/publications.json');
+    
+    // Filter publications for the specified month
+    return data.publications.filter((pub: Publication) => {
+      const pubDate = new Date(pub.date);
+      return pubDate.getFullYear() === year && pubDate.getMonth() === month;
+    });
   } catch (error) {
-    console.error(`Error loading data for ${year}-${month + 1}:`, error);
-    return {
-      year,
-      month,
-      days: getMonthDays(year, month),
-      publications: [],
-      events: []
-    };
+    console.error('Error loading publications:', error);
+    return [];
   }
 };
 
 /**
- * Gets all days in a month
+ * Load events for a specific month
  */
-const getMonthDays = (year: number, month: number) => {
-  const days = [];
-  const lastDay = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay();
+const loadEvents = async (year: number, month: number): Promise<Event[]> => {
+  // TODO: Implement events loading
+  return [];
+};
+
+/**
+ * Generate calendar days for a month
+ */
+const generateCalendarDays = (year: number, month: number) => {
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const daysInMonth = lastDay.getDate();
   
-  // Add empty cells for days before the first of the month
-  for (let i = 0; i < firstDay; i++) {
-    days.push({ date: '', day: 0, dayOfWeek: '', isEmpty: true });
+  const days = [];
+  
+  // Add empty days for padding at start of month
+  for (let i = 0; i < firstDay.getDay(); i++) {
+    days.push({
+      date: '',
+      day: 0,
+      dayOfWeek: '',
+      isEmpty: true
+    });
   }
   
-  // Add the days of the month
-  for (let i = 1; i <= lastDay; i++) {
-    const date = new Date(year, month, i);
-    const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '');
+  // Add actual days of the month
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(year, month, day);
     days.push({
-      date: formattedDate,
-      day: i,
+      date: date.toISOString().split('T')[0],
+      day,
       dayOfWeek: date.toLocaleDateString('en-US', { weekday: 'long' }),
       isEmpty: false
     });
@@ -84,7 +102,7 @@ export const saveMonthData = async (
   year: number,
   month: number,
   publications: Publication[],
-  events: SpecialEvent[]
+  events: Event[]
 ) => {
   // This function would typically be implemented in a backend service
   // For now, we'll just log what would be saved

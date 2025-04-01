@@ -1,4 +1,4 @@
-import { Publication, SpecialEvent } from '@/types';
+import { Publication, Event } from '@/types';
 
 /**
  * Handles popup position updates based on mouse movement
@@ -78,7 +78,7 @@ export const handleDropdownClick = (
  */
 export const handleModalClose = (
   setSelectedPublication: React.Dispatch<React.SetStateAction<Publication | null>>,
-  setSelectedEvent: React.Dispatch<React.SetStateAction<SpecialEvent | null>>
+  setSelectedEvent: React.Dispatch<React.SetStateAction<Event | null>>
 ) => {
   setSelectedPublication(null);
   setSelectedEvent(null);

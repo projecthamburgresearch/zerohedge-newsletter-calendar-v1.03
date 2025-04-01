@@ -1,4 +1,4 @@
-import { Publication, SourceGroup, SpecialEvent } from '../types';
+import { Publication, SourceGroup, Event } from '../types';
 
 export const groupPublicationsBySource = (publications: Publication[]): SourceGroup[] => {
   const groups: { [key: string]: Set<string> } = {};
@@ -27,9 +27,9 @@ export const getPublicationsForDate = (publications: Publication[], date: string
   return publications.filter(isPublicationOnDate);
 };
 
-export const getEventsForDate = (events: SpecialEvent[], date: string) => {
-  const isEventOnDate = (event: SpecialEvent): boolean => 
-    date >= event.startDate && date <= event.endDate;
+export const getEventsForDate = (events: Event[], date: string) => {
+  const isEventOnDate = (event: Event): boolean => 
+    date >= event.startDate && (!event.endDate || date <= event.endDate);
   return events.filter(isEventOnDate);
 };
 
