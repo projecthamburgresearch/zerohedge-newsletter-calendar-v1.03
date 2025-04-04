@@ -1,0 +1,10 @@
+a project iniated by kai. idea is for a calaneder web app that facilitates 
+the finance specialist/traders about thethier domain speciifc events and
+ new letters.
+
+ working: 
+ nextjs app, use input data extracted from s3 sitemap of all previous
+ 4 years events/newsletters. they were organazed in intellgent way so
+ hence sitemap is rich with information.
+that sitemap given to llm and then used to create one month of predictive
+ data e.g april 2025. 
