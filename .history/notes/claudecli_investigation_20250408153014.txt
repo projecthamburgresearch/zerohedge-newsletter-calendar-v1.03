@@ -1,0 +1,731 @@
+Windows [Version 10.0.20348.2402]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator\Desktop\ARB_WorkSpace\project hamburg 2025\zerohedge-newsletter-calendar-v1.03>claude
+╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ✻ Welcome to Claude CLI research preview!                                                                     │
+│                                                                                                               │
+│   /help for help                                                                                              │
+│                                                                                                               │
+│   cwd: C:\Users\Administrator\Desktop\ARB_WorkSpace\project hamburg 2025\zerohedge-newsletter-calendar-v1.03  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+> what can you tell me about this project?
+
+● Let me check the key files to understand this project.
+
+● Read(file_path: "README.md")…
+  ⎿  # zerohedge-newsletter-calendar-v1.02
+
+● Let me check the package.json for more details:
+
+● Read(file_path: "package.json")…
+  ⎿  {
+       "name": "zerohedge-newsletter-calendar-v1.02",
+       "version": "1.0.0",
+     ... (+26 lines)
+
+● Let me check the main page component:
+
+● Read(file_path: "src\\app\\page.tsx")…
+  ⎿  'use client';
+     import FinancialCalendar from '@/components/FinancialCalendar';
+     ... (+8 lines)
+
+● This is a Next.js web application that appears to be a financial calendar/newsletter system. Here are the key
+  details:
+
+    1. Tech Stack:
+
+    * Next.js 14.1.0
+    * React 18.2.0
+    * TypeScript
+    * TailwindCSS for styling
+
+    1. Main Features:
+
+    * Financial calendar interface
+    * Newsletter management
+    * Data sourced from CSV files in public/assets:
+      * financial_publications_april_2025.csv
+      * special_events_april_2025.csv
+
+    1. Key Components:
+
+    * FinancialCalendar (main component)
+    * CalendarGrid
+    * CalendarCell
+    * CalendarFilters
+    * ListView
+    * FooterStats
+
+    1. Architecture:
+
+    * Uses modern React patterns with TypeScript
+    * Client-side rendering ('use client' directive)
+    * Organized into components, hooks, utils, and types
+    * Data management through custom hooks like useCalendarState
+
+  The project appears to be a specialized calendar application for tracking financial publications and special
+  events, likely for ZeroHedge newsletter management.
+
+> does the calaneder use csv or the json for its data
+
+● Let me check the data handling logic:
+
+● Read(file_path: "src\\data\\index.ts")…
+  ⎿
+
+● Let me check the JSON files:
+
+● Read(file_path: "src\\data\\publications.json")…
+  ⎿  {
+         "publications": [
+           {
+     ... (+1795 lines)
+
+● Let me check the special events JSON:
+
+● Read(file_path: "src\\data\\special-events.json")…
+  ⎿  {
+       "specialEvents": [
+           {
+     ... (+754 lines)
+
+● Let me check the calendar implementation:
+
+● Read(file_path: "src\\components\\FinancialCalendar.tsx")…
+  ⎿  import React, { useState } from 'react';
+     import { CalendarGrid } from './CalendarGrid';
+     import ListView from './ListView';
+     ... (+192 lines)
+  ⎿  API Error (429) · Retrying in 56 seconds… (attempt 1/5)
+
+● This is a Next.js financial calendar application that displays and manages newsletter publications and special
+  events. Here are the key details:
+
+    1. Data Sources:
+
+    * Uses JSON files (not CSV) for data:
+      * publications.json: Contains newsletter publications data
+      * special-events.json: Contains special events data
+
+    1. Main Features:
+
+    * Grid and List views for calendar data
+    * Filtering capabilities:
+      * By day
+      * By week
+      * By source (e.g., JPM, Goldman, etc.)
+      * By type (Daily, Weekly, Monthly, etc.)
+    * Interactive calendar cells with publication and event details
+    * Modal popups for detailed information
+    * Statistics footer
+
+    1. Key Components:
+
+    * FinancialCalendar: Main component orchestrating the calendar
+    * CalendarGrid: Grid view of the calendar
+    * ListView: Alternative list view
+    * CalendarFilters: Filter controls
+    * FooterStats: Statistics display
+    * PublicationModal & EventModal: Detail popups
+
+    1. Data Structure:
+
+    * Publications include:
+      * Date, source, title, domain
+      * Newsletter type (Daily/Weekly/Monthly)
+      * Author, focus areas, tags
+    * Special Events include:
+      * Event ID, title, dates
+      * Description, type
+      * Related sources
+
+    1. UI Features:
+
+    * Responsive design using Tailwind CSS
+    * Toggle between grid and list views
+    * Month navigation
+    * ZeroHedge branding and logo
+    * Custom scrollbar styling
+
+  The calendar is specifically focused on April 2025 and includes financial publications and market events from
+  major financial institutions.
+
+> rest of the calaender calls or uses properties from the json, can you make the list of what those properities are not
+  by looking the properites on the json but looking at the rest of the calanedner and finding the preoperties it expect
+  to use from the json. do this for publications and events
+
+● I'll analyze the components to find what properties they expect from the JSON data:
+
+● Read(file_path: "src\\types\\index.ts")…
+  ⎿  export interface Publication {
+       date: string;
+       dayOfWeek: string;
+     ... (+69 lines)
+
+● Let me check the components that use these types:
+
+● Read(file_path: "src\\components\\CalendarCell.tsx")…
+  ⎿  import React, { useState, useEffect, useRef } from 'react';
+     import { Publication, Event, SourceGroup, CalendarDay } from '@/types';
+     import { getAbbreviatedSource } from '@/utils/dateUtils';
+     ... (+377 lines)
+  ⎿  API Error (429) · Retrying in 36 seconds… (attempt 1/5)
+
+● Let me check the ListView component:
+
+● Read(file_path: "src\\components\\ListView.tsx")…
+  ⎿  import React, { useState } from 'react';
+     import { Publication, Event } from '@/types';
+     import { formatDate } from '@/utils/dateUtils';
+     ... (+179 lines)
+  ⎿  API Error (429) · Retrying in 36 seconds… (attempt 1/5)
+
+● Based on the component implementations, here are the properties that the calendar expects from the JSON data:
+
+  For Publications (publications.json):
+
+    {
+      date: string;            // Format: "YYYYMMDD"
+      dayOfWeek: string;       // e.g., "Monday", "Tuesday", etc.
+      source: string;          // e.g., "JPM", "Goldman", etc.
+      seriesTitle: string;     // e.g., "Morning Brief", "Market Intelligence", etc.
+      domain: string;          // e.g., "Economics", "Banking Team", etc.
+      author: string;          // e.g., "John Smith", "Market Strategy Group"
+      newsletterType: string;  // "Daily", "Weekly", "Monthly", "Quarterly", "Occasional"
+      primaryFocus: string;    // e.g., "Market Analysis", "Economic Data"
+      specificTags: string[] | string;  // Array or comma-separated string of tags
+      previousYearReleased: boolean;    // Whether it was released last year
+      internetSourceSupport: boolean;   // Whether it has online support
+    }
+
+  For Events (special-events.json):
+
+    {
+      eventID: string;         // Unique identifier for the event
+      title: string;          // Event title
+      startDate: string;      // Format: "YYYYMMDD"
+      endDate: string;        // Format: "YYYYMMDD" (optional)
+      dayOfWeek: string;      // e.g., "Monday", "Tuesday", etc.
+      type: string;           // e.g., "Economic Data", "Central Bank Policy"
+      description: string;    // Detailed description of the event
+      relatedSources: string[];  // Array of related sources/institutions
+    }
+
+  The calendar components specifically use these properties for:
+
+    1. Display and Filtering:
+      2. date/startDate: For calendar placement and sorting
+      3. source: For filtering and grouping
+      4. seriesTitle/title: For display in cells and list view
+      5. newsletterType: For filtering and categorization
+      6. type: For color coding and filtering events
+    7. Interactive Features:
+      8. description: Shown in modals and expanded views
+      9. specificTags: Used for detailed filtering
+      10. relatedSources: Shown in event details
+    11. Visual Organization:
+      12. dayOfWeek: For display and organization
+      13. eventID: For unique identification in lists
+      14. endDate: For multi-day events
+
+  The calendar heavily relies on these properties for its core functionality of displaying, filtering, and
+  organizing the financial publications and events.
+
+> is there consistency between all the files that you use to match these properties expected from the json. what i am
+  asking does all the files agree on these preoperties or somefiles ask for what we know should be one property but due
+  to a typo ask for something difference. write in essence i want to know that all the files are on same page.
+
+● Let me cross-reference the property names across different files:
+
+● Search(query: "interface (Publication|Event)")…
+  ⎿  Found 8 files
+  ⎿  API Error (529) · Retrying in 1 seconds… (attempt 1/5)
+  ⎿  API Error (529) · Retrying in 2 seconds… (attempt 2/5)
+  ⎿  API Error (529) · Retrying in 4 seconds… (attempt 3/5)
+
+● Let me check each relevant file:
+
+● Read(file_path: "src\\components\\modals\\PublicationModal.tsx")…
+  ⎿  import React from 'react';
+     import { Publication } from '@/types';
+     import { formatDate } from '@/utils/dateUtils';
+     ... (+93 lines)
+
+● Read(file_path: "src\\components\\modals\\EventModal.tsx")…
+  ⎿  import React from 'react';
+     import { Event } from '@/types';
+     import { formatDate } from '@/utils/dateUtils';
+     ... (+70 lines)
+  ⎿  API Error (429) · Retrying in 74 seconds… (attempt 1/5)
+
+● Let me check the actual JSON data again to compare:
+
+● Read(file_path: "src\\data\\publications.json")…
+  ⎿  {
+         "publications": [
+           {
+     ... (+1795 lines)
+  ⎿  API Error (429) · Retrying in 52 seconds… (attempt 1/5)
+
+● I've found some inconsistencies in the data:
+
+    1. Publication Properties:
+      2. In types/index.ts, previousYearReleased is defined as boolean
+      3. In JSON data, some entries use previousYearRelease (missing 'd') and use "Yes"/"No" strings instead of boolean
+      4. In JSON data, some entries use previousYearReleased (correct) with boolean values
+    5. Event Properties:
+      6. In types/index.ts, event ID is defined as id
+      7. In JSON data, it's defined as eventID
+      8. In types/index.ts, endDate is optional with ?
+      9. In JSON data, endDate is always present
+    10. SpecificTags Inconsistency:
+      11. In types/index.ts, defined as specificTags: string | string[]
+      12. In JSON data, appears in three formats:
+        13. Array of strings: ["Equities", "Fixed Income"]
+        14. Comma-separated string: "briefing,morning,market intelligence"
+
+> given that you have indetified the inconsistencies in the json, i want you to review the see if there inconsistencies
+  between the calander files. for what should be the same property and is understood to be same property but in error
+  labaeled and asked for something difference.
+
+● I'll analyze the components that handle these properties to find any inconsistencies in how they reference the
+  same conceptual property:
+
+● Read(file_path: "src\\utils\\publicationUtils.ts")…
+  ⎿  import { Publication, SourceGroup, Event } from '../types';
+     export const groupPublicationsBySource = (publications: Publication[]): SourceGroup[] => {
+     ... (+49 lines)
+  ⎿  API Error (529) · Retrying in 1 seconds… (attempt 1/5)
+
+● Read(file_path: "src\\utils\\statsUtils.ts")…
+  ⎿  import { Publication } from '@/types';
+     interface PublicationStats {
+     ... (+39 lines)
+  ⎿  API Error (429) · Retrying in 77 seconds… (attempt 1/5)
+
+● Let me check the hooks:
+
+● Read(file_path: "src\\hooks\\usePublicationFilters.ts")…
+  ⎿  import { useState, useCallback, useMemo } from 'react';
+     import { Publication } from '@/types';
+     import { getWeekNumber } from '@/utils/dateUtils';
+     ... (+67 lines)
+  ⎿  API Error (429) · Retrying in 54 seconds… (attempt 1/5)
+  ⎿  API Error (529) · Retrying in 2 seconds… (attempt 2/5)
+  ⎿  API Error (529) · Retrying in 4 seconds… (attempt 3/5)
+  ⎿  API Error (529) · Retrying in 8 seconds… (attempt 4/5)
+
+● After reviewing the components and utilities, I've found several inconsistencies in how properties are referenced
+  across files:
+
+    1. Event ID Inconsistency:
+
+    // In types/index.ts
+    interface Event {
+      id: string;  // defined as 'id'
+    }
+
+    // In special-events.json
+    {
+      "eventID": "quarterly-start"  // used as 'eventID'
+    }
+
+    // In CalendarCell.tsx
+    const getItemKey = (item: Publication | Event): string => {
+      if ('seriesTitle' in item) {
+        return `pub-${item.source}-${item.seriesTitle}-${item.date}`;
+      }
+      return `event-${item.id}`;  // tries to use 'id' but data has 'eventID'
+    };
+
+    1. Previous Year Release Inconsistency:
+
+    // In types/index.ts
+    interface Publication {
+      previousYearReleased: boolean;
+    }
+
+    // In publications.json
+    {
+      "previousYearRelease": "Yes",  // wrong property name and wrong type
+    }
+
+    // In PublicationModal.tsx
+    <div>{publication.previousYearReleased ? 'Yes' : 'No'}</div>  // uses correct property name
+
+    1. Internet Source Support Inconsistency:
+
+    // In types/index.ts
+    interface Publication {
+      internetSourceSupport: boolean;
+    }
+
+    // In publications.json
+    {
+      "internetSourceSupport": "Yes"  // wrong type, should be boolean
+    }
+
+    // In PublicationModal.tsx
+    <div>Internet Source Support: {publication.internetSourceSupport}</div>  // expects boolean
+
+    1. Specific Tags Inconsistency:
+
+    // In types/index.ts
+    interface Publication {
+      specificTags: string | string[];
+    }
+
+    // In publications.json
+    {
+      "specificTags": ["Equities", "Fixed Income"],  // array format
+      "specificTags": "briefing,morning,market intelligence",  // string format
+    }
+
+    // In PublicationModal.tsx
+    const tags = Array.isArray(publication.specificTags)
+      ? publication.specificTags
+      : publication.specificTags.split(',')  // has to handle both formats
+
+    1. Date Format Inconsistency:
+
+    // In usePublicationFilters.ts
+    const pubDate = new Date(
+      parseInt(publication.date.substring(0, 4)),
+      parseInt(publication.date.substring(4, 6)) - 1,
+      parseInt(publication.date.substring(6, 8))
+    );
+
+    // In publicationUtils.ts
+    const isPublicationOnDate = (pub: Publication): boolean => pub.date === date;  // uses direct string comparison
+
+    1. Newsletter Type Case Sensitivity:
+
+    // In types/index.ts
+    export interface PublicationType {
+      Daily: 'Daily';
+      Weekly: 'Weekly';
+      Monthly: 'Monthly';
+      Quarterly: 'Quarterly';
+      Occasional: 'Occasional';
+    }
+
+    // In statsUtils.ts
+    switch (pub.newsletterType) {
+      case 'Daily':  // assumes exact case match
+      case 'Weekly':
+      case 'Monthly':
+      case 'Quarterly':
+      default:
+        stats.other++;
+    }
+
+  These inconsistencies could lead to runtime errors or unexpected behavior. Recommendations:
+
+    1. Standardize Event ID:
+      2. Use either id or eventID consistently across all files
+      3. Update type definitions and JSON data to match
+    4. Standardize Boolean Properties:
+      5. Convert all Yes/No strings to true/false booleans
+      6. Use consistent property names (previousYearReleased vs previousYearRelease)
+    7. Standardize Specific Tags:
+      8. Choose one format (preferably array)
+      9. Update all data to use the chosen format
+      10. Remove type coercion code
+    11. Standardize Date Handling:
+      12. Use consistent date comparison methods
+      13. Consider using a date utility library
+    14. Add Type Guards:
+      15. Add runtime type checking for critical properties
+      16. Validate data format when loading from JSON
+    17. Add Enum for Newsletter Types:
+      18. Define an enum for newsletter types
+      19. Use the enum for type checking and comparisons
+
+  These changes would make the code more robust and easier to maintain.
+
+> could you find inconsistencies between properties correctly called but use of its type is inccorect. one file may use
+  the property as a string and another as a boolean. this prompt is only looking when the different files match in
+  calling the same property but use and interact with the property incorrectly
+
+● I'll analyze how each property is used across different files when the property name matches but the type usage
+  differs:
+
+● Searc(query: "previousYearReleased|internetSourceSupport|specificTags|newsletterType|date|dayOfWeek|source|seriesTit…e
+       |domain|author|primaryFocus")
+  ⎿  Found 32 files
+
+● Let me check how these properties are used in key files:
+
+● Read(file_path: "src\\components\\modals\\PublicationModal.tsx")…
+  ⎿  import React from 'react';
+     import { Publication } from '@/types';
+     import { formatDate } from '@/utils/dateUtils';
+     ... (+93 lines)
+  ⎿  API Error (429) · Retrying in 106 seconds… (attempt 1/5)
+
+● Let me check the stats utils:
+
+● Read(file_path: "src\\utils\\calendarData.ts")…
+  ⎿  import { Publication, Event, CalendarMonth } from '@/types';
+     /**
+     ... (+121 lines)
+  ⎿  API Error (429) · Retrying in 60 seconds… (attempt 1/5)
+
+● After analyzing how properties are used across files, I found several cases where the same property is handled
+  differently in different files despite having the same name:
+
+    1. internetSourceSupport Type Mismatch:
+
+    // In types/index.ts
+    interface Publication {
+      internetSourceSupport: boolean;
+    }
+
+    // In PublicationModal.tsx
+    <div>Internet Source Support: {publication.internetSourceSupport}</div>
+    // Treats it as string for display, no boolean conversion
+
+    // In calendarData.ts
+    internetSourceSupport: typeof pub.internetSourceSupport === 'boolean'
+      ? pub.internetSourceSupport
+      : pub.internetSourceSupport === 'Yes'
+    // Converts string to boolean
+
+    1. previousYearReleased Type Mismatch:
+
+    // In types/index.ts
+    interface Publication {
+      previousYearReleased: boolean;
+    }
+
+    // In PublicationModal.tsx
+    <div>{publication.previousYearReleased ? 'Yes' : 'No'}</div>
+    // Uses as boolean for conditional
+
+    // In calendarData.ts
+    previousYearReleased: typeof pub.previousYearReleased === 'boolean'
+      ? pub.previousYearReleased
+      : pub.previousYearRelease === 'Yes'
+    // Handles both boolean and string types
+
+    1. specificTags Type Handling:
+
+    // In types/index.ts
+    interface Publication {
+      specificTags: string | string[];
+    }
+
+    // In PublicationModal.tsx
+    const tags = Array.isArray(publication.specificTags)
+      ? publication.specificTags
+      : (typeof publication.specificTags === 'string'
+          ? publication.specificTags.split(',').map((tag: string) => tag.trim())
+          : []);
+    // Complex type checking and conversion
+
+    // In calendarData.ts
+    specificTags: Array.isArray(pub.specificTags)
+      ? pub.specificTags
+      : pub.specificTags.split(',').map((t: string) => t.trim())
+    // Different conversion logic, assumes string if not array
+
+    1. date Type Usage:
+
+    // In usePublicationFilters.ts
+    const pubDate = new Date(
+      parseInt(publication.date.substring(0, 4)),
+      parseInt(publication.date.substring(4, 6)) - 1,
+      parseInt(publication.date.substring(6, 8))
+    );
+    // Treats as string to parse
+
+    // In calendarData.ts
+    const pubDate = new Date(pub.date);
+    // Treats as direct Date constructor input
+
+    // In publicationUtils.ts
+    const isPublicationOnDate = (pub: Publication): boolean => pub.date === date;
+    // Treats as string for comparison
+
+    1. newsletterType Type Handling:
+
+    // In types/index.ts
+    export interface PublicationType {
+      Daily: 'Daily';
+      Weekly: 'Weekly';
+      Monthly: 'Monthly';
+      Quarterly: 'Quarterly';
+      Occasional: 'Occasional';
+    }
+
+    // In statsUtils.ts
+    switch (pub.newsletterType) {
+      case 'Daily':
+      case 'Weekly':
+      case 'Monthly':
+      case 'Quarterly':
+      default:
+        stats.other++;
+    }
+    // Uses direct string comparison
+
+    // In calendarData.ts
+    newsletterType: pub.newsletterType,
+    // No type validation
+
+  These inconsistencies in type handling could lead to runtime errors. Recommendations:
+
+    1. Standardize Boolean Handling:
+      2. Add type guards for boolean properties
+      3. Convert strings to booleans consistently in one place
+      4. Use boolean operations consistently
+    5. Standardize Date Handling:
+      6. Create a single date parsing utility
+      7. Use consistent date comparison method
+      8. Document expected date format
+    9. Standardize Array/String Handling:
+      10. Create utility functions for type conversions
+      11. Handle edge cases consistently
+      12. Document expected formats
+    13. Add Type Validation:
+      14. Add runtime type checking
+      15. Validate data at load time
+      16. Use TypeScript enums for fixed values
+    17. Create Central Data Processing:
+      18. Move data transformation to a single place
+      19. Create validated data structures
+      20. Document data expectations
+
+  This would make the code more maintainable and reduce the risk of runtime errors.
+
+> now that you have answered all my question , i would like you to create a mapping report similar to how a sitemap is
+  but specific to showing these three levels between files level 1 ,file name a, b,...same propert yname and write
+  conficting types. level2: filename a,b,... conflicting properties level 3 json vs filename a,b and missmatch
+  properties.
+  ⎿  API Error. Please wait a moment and try again.
+
+> try again
+
+● I'll create a hierarchical mapping of the inconsistencies we found:
+
+  Property Type Conflict Map
+
+  Level 1: Same Property Name, Conflicting Types Between Files
+
+    1. internetSourceSupport
+       ├── PublicationModal.tsx: treated as string for display
+       ├── calendarData.ts: treated as boolean/string with conversion
+       └── types/index.ts: defined as boolean
+
+    2. previousYearReleased
+       ├── PublicationModal.tsx: used as boolean in conditional
+       ├── calendarData.ts: handles both boolean and string
+       └── types/index.ts: defined as boolean
+
+    3. specificTags
+       ├── PublicationModal.tsx: string|string[] with complex type checking
+       ├── calendarData.ts: string[]|string with simple conversion
+       └── types/index.ts: defined as string|string[]
+
+    4. date
+       ├── usePublicationFilters.ts: string for substring parsing
+       ├── calendarData.ts: string for Date constructor
+       ├── publicationUtils.ts: string for direct comparison
+       └── types/index.ts: defined as string
+
+    5. newsletterType
+       ├── statsUtils.ts: string for direct comparison
+       ├── calendarData.ts: string without validation
+       └── types/index.ts: defined as PublicationType enum
+
+  Level 2: Property Name Mismatches Between Files
+
+    1. Event ID
+       ├── types/index.ts: "id"
+       ├── CalendarCell.tsx: "id"
+       └── EventModal.tsx: "id"
+
+    2. Previous Year Released
+       ├── types/index.ts: "previousYearReleased"
+       ├── PublicationModal.tsx: "previousYearReleased"
+       └── calendarData.ts: handles both "previousYearReleased" and "previousYearRelease"
+
+  Level 3: JSON vs Code Mismatches
+
+    1. publications.json vs Code
+       ├── previousYearRelease
+       │   ├── JSON: "Yes"/"No" string
+       │   └── Code: expects boolean
+       │
+       ├── internetSourceSupport
+       │   ├── JSON: "Yes"/"No" string
+       │   └── Code: expects boolean
+       │
+       ├── specificTags
+       │   ├── JSON: mixed (arrays and comma-separated strings)
+       │   └── Code: expects string|string[]
+       │
+       └── newsletterType
+           ├── JSON: string without validation
+           └── Code: expects specific enum values
+
+    2. special-events.json vs Code
+       ├── eventID
+       │   ├── JSON: "eventID" property
+       │   └── Code: expects "id" property
+       │
+       └── endDate
+           ├── JSON: always present
+           └── Code: marked as optional
+
+  Impact Areas
+
+    1. Data Loading
+       ├── calendarData.ts: Primary data transformation point
+       └── Needs standardized type conversion
+
+    2. Display Components
+       ├── PublicationModal.tsx
+       ├── EventModal.tsx
+       └── Need consistent type handling
+
+    3. Data Processing
+       ├── usePublicationFilters.ts
+       ├── statsUtils.ts
+       └── publicationUtils.ts
+
+    4. Type Definitions
+       ├── types/index.ts
+       └── Needs alignment with actual data structure
+
+  Recommended Fix Points
+
+    1. Data Entry Point
+       └── calendarData.ts
+           ├── Add type validation
+           ├── Standardize conversions
+           └── Document data expectations
+
+    2. Type Definitions
+       └── types/index.ts
+           ├── Update to match JSON
+           ├── Add runtime type guards
+           └── Document type constraints
+
+    3. JSON Schema
+       └── Both JSON files
+           ├── Standardize boolean values
+           ├── Standardize array formats
+           └── Align property names
+
+    4. Component Updates
+       └── All components
+           ├── Use consistent type handling
+           ├── Add type checking
+           └── Document assumptions
+
+  This map shows where the inconsistencies are and how they relate to each other across the codebase. It should help
+  in planning a systematic approach to fixing these issues.
