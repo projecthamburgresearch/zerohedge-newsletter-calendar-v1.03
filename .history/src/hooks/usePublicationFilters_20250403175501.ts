@@ -2,14 +2,6 @@ import { useState, useCallback, useMemo } from 'react';
 import { Publication } from '@/types';
 import { getWeekNumber } from '@/utils/dateUtils';
 
-// Consistent date parsing function matching the one in csvParser.ts
-function parseDate(dateStr: string): Date {
-  const year = parseInt(dateStr.substring(0, 4));
-  const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
-  const day = parseInt(dateStr.substring(6, 8));
-  return new Date(year, month, day);
-}
-
 interface FilterState {
   week: string | null;
   source: string | null;
@@ -38,11 +30,16 @@ export const usePublicationFilters = (
   currentMonth: number
 ) => {
   const filteredPublications = publications.filter(publication => {
-    // Parse the date using our consistent function
-    const pubDate = parseDate(publication.date);
+    // First filter by month and year
+    const pubDate = new Date(
+      parseInt(publication.date.substring(0, 4)),
+      parseInt(publication.date.substring(4, 6)) - 1,  // Convert 1-based month to 0-based
+      parseInt(publication.date.substring(6, 8))
+    );
     
-    // Filter by month and year
-    if (pubDate.getFullYear() !== currentYear || pubDate.getMonth() + 1 !== currentMonth) {
+    // Both the publication date and currentMonth are now in 1-based format
+    const pubMonth = parseInt(publication.date.substring(4, 6));
+    if (pubDate.getFullYear() !== currentYear || pubMonth !== currentMonth) {
       return false;
     }
 

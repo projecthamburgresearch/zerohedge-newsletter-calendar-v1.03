@@ -1,7 +1,6 @@
-import React from 'react';
 import { Publication, Event } from '@/types';
 import { CalendarCell } from './CalendarCell';
-import { getMonthDays, getPublicationsForDate, getEventsForDate, parseDate } from '@/utils/dateUtils';
+import { getMonthDays, getPublicationsForDate, getEventsForDate } from '@/utils/dateUtils';
 
 interface Props {
   publications: Publication[];
@@ -22,8 +21,11 @@ export const CalendarGrid: React.FC<Props> = ({
 }) => {
   // Filter events for current month and year
   const filteredEvents = events.filter(event => {
-    const eventDate = parseDate(event.startDate);
-    return eventDate.getFullYear() === currentYear && eventDate.getMonth() + 1 === currentMonth;
+    // Extract year and month directly from the string to avoid Date object month conversion issues
+    const eventYear = parseInt(event.startDate.substring(0, 4));
+    const eventMonth = parseInt(event.startDate.substring(4, 6)); // Already in 1-based format
+    
+    return eventYear === currentYear && eventMonth === currentMonth;
   });
 
   const days = getMonthDays(currentYear, currentMonth);

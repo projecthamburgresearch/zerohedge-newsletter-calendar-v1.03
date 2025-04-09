@@ -1,6 +1,6 @@
 import React from 'react';
 import { Publication, Event } from '@/types';
-import { CalendarCell } from './CalendarCell';
+import CalendarCell from './CalendarCell';
 import { getMonthDays, getPublicationsForDate, getEventsForDate, parseDate } from '@/utils/dateUtils';
 
 interface Props {

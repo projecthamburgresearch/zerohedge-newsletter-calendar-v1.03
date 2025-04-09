@@ -1,25 +1,18 @@
 import { Publication, Event, CalendarDay } from '@/types';
 
 /**
- * Standard date parsing function used throughout the application
- */
-export const parseDate = (dateStr: string): Date => {
-  const year = parseInt(dateStr.substring(0, 4));
-  const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
-  const day = parseInt(dateStr.substring(6, 8));
-  return new Date(year, month, day);
-};
-
-/**
  * Formats a date string (YYYYMMDD) into a readable format
  */
 export const formatDate = (dateString: string): string => {
-  const date = parseDate(dateString);
-  return date.toLocaleDateString('en-US', { 
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  const year = dateString.substring(0, 4);
+  const month = dateString.substring(4, 6);
+  const day = dateString.substring(6, 8);
+  return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    .toLocaleDateString('en-US', { 
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
 };
 
 /**
@@ -178,11 +171,10 @@ export const getPublicationsForDate = (publications: Publication[], date: string
 export const getEventsForDate = (events: Event[], date: string): Event[] => {
   return events.filter(event => {
     // Convert all dates to numbers for proper comparison
-    const dateNum = parseInt(date);
-    const startNum = parseInt(event.startDate);
-    const endNum = event.endDate ? parseInt(event.endDate) : startNum;
-    
-    return dateNum >= startNum && dateNum <= endNum;
+    const eventStart = event.startDate ? parseInt(event.startDate) : 0;
+    const eventEnd = event.endDate ? parseInt(event.endDate) : 0;
+    const currentDate = parseInt(date);
+    return currentDate >= eventStart && currentDate <= eventEnd;
   });
 };
 

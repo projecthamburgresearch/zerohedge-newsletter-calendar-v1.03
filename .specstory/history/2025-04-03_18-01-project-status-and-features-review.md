@@ -8232,6 +8232,465 @@ Would you like me to implement any of these additional improvements, or are you 
 
 ---
 
+_**User**_
+
+ok solve the 2nd issue just for now, data handling issue. make them consistent. short and simple fixes rather than creating util files. 
+
+---
+
+_**Assistant**_
+
+
+
+---
+
+Let me implement a consistent approach to date handling:
+
+---
+
+```diff
+  import Papa from 'papaparse';
+  import { Publication, Event } from '@/types';
++ 
++ // Consistent date parsing function used throughout the file
++ function parseDate(dateStr: string): Date {
++   const year = parseInt(dateStr.substring(0, 4));
++   const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
++   const day = parseInt(dateStr.substring(6, 8));
++   return new Date(year, month, day);
++ }
+  
+  export async function loadPublicationsFromCsv(): Promise<Publication[]> {
+        startDate: row.StartDate,
+        endDate: row.EndDate || row.StartDate, // Ensure endDate is never undefined
+-       dayOfWeek: getDayOfWeek(row.StartDate),
++       dayOfWeek: getDayOfWeekFromDate(parseDate(row.StartDate)),
+        type: row.Type,
+        description: row.Description,
+  }
+  
+- function getDayOfWeek(dateStr: string): string {
+-   const year = parseInt(dateStr.substring(0, 4));
+-   const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
+-   const day = parseInt(dateStr.substring(6, 8));
+-   return new Date(year, month, day).toLocaleDateString('en-US', { weekday: 'long' });
++ function getDayOfWeekFromDate(date: Date): string {
++   return date.toLocaleDateString('en-US', { weekday: 'long' });
+  } 
+```
+
+---
+
+Now let's update the usePublicationFilters hook to use the same date parsing approach:
+
+---
+
+```diff
+  import { Publication } from '@/types';
+  import { getWeekNumber } from '@/utils/dateUtils';
++ 
++ // Consistent date parsing function matching the one in csvParser.ts
++ function parseDate(dateStr: string): Date {
++   const year = parseInt(dateStr.substring(0, 4));
++   const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
++   const day = parseInt(dateStr.substring(6, 8));
++   return new Date(year, month, day);
++ }
+  
+  interface FilterState {
+  ) => {
+    const filteredPublications = publications.filter(publication => {
+-     // First filter by month and year
+-     const pubDate = new Date(
+-       parseInt(publication.date.substring(0, 4)),
+-       parseInt(publication.date.substring(4, 6)) - 1,  // Convert 1-based month to 0-based
+-       parseInt(publication.date.substring(6, 8))
+-     );
++     // Parse the date using our consistent function
++     const pubDate = parseDate(publication.date);
+      
+-     // Both the publication date and currentMonth are now in 1-based format
+-     const pubMonth = parseInt(publication.date.substring(4, 6));
+-     if (pubDate.getFullYear() !== currentYear || pubMonth !== currentMonth) {
++     // Filter by month and year
++     if (pubDate.getFullYear() !== currentYear || pubDate.getMonth() + 1 !== currentMonth) {
+        return false;
+      }
+```
+
+---
+
+Now, let's check if there are any date comparison operations in the utils that need to be updated:
+
+---
+
+<details>
+            <summary>Grep search for "date === |date >= |date <= |date < |date > " • **5** files</summary>
+        
+| File | Line | Match |
+|------|------|-------|
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-49-running-project-on-github-pages.md` | L1205 | `date >= event.startDate && date <= event.endDate;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-49-running-project-on-github-pages.md` | L1218 | `-     date >= event.startDate && date <= event.endDate;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-49-running-project-on-github-pages.md` | L1219 | `+     date >= event.startDate && (!event.endDate || date <= event.endDate);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-07-running-local-application-instructions.md` | L152 | `return events.filter(event => event.startDate === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-07-running-local-application-instructions.md` | L158 | `date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-07-running-local-application-instructions.md` | L228 | `-     date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-07-running-local-application-instructions.md` | L235 | `+     return currentDate >= eventStart && currentDate <= eventEnd;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_21-07-running-local-application-instructions.md` | L256 | `return currentDate >= eventStart && currentDate <= eventEnd;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L407 | `-   return publications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L408 | `+   const isPublicationOnDate = (pub: Publication): boolean => pub.date === date;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L414 | `-     date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L417 | `+     date >= event.startDate && date <= event.endDate;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L538 | `-           const dateEvents = events.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L540 | `+           const dateEvents = events.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2276 | `-       const events = newRotating.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2295 | `+       const eventIndex = events.findIndex(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2296 | `+       next[date] = (next[date] + 1) % events.filter(e => e.date === date).length;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2485 | `+   for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2545 | `+   return publications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2552 | `+   return events.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2859 | `-   for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3205 | `⟪ 144 characters skipped ⟫teEvents = events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3209 | `⟪ 146 characters skipped ⟫(next[date] + 1) % events.filter(e => e.date === date).length;` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3216 | `⟪ 127 characters skipped ⟫ `return publications.filter(pub => pub.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3217 | `⟪ 125 characters skipped ⟫ | `return events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3247 | `⟪ 168 characters skipped ⟫teEvents = events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3249 | `⟪ 150 characters skipped ⟫ | L11 | `return events.filter(event => date >= event.startDate && date <= event.endDate);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3257 | `⟪ 160 characters skipped ⟫const dateEvents = events.filter(e => e.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3261 | `⟪ 168 characters skipped ⟫teEvents = events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3263 | `⟪ 165 characters skipped ⟫ dateEvents = newRotating.filter(e => e.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3271 | `⟪ 168 characters skipped ⟫teEvents = events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3276 | `⟪ 158 characters skipped ⟫onst events = newRotating.filter(e => e.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3280 | `⟪ 151 characters skipped ⟫ `return publications.filter(pub => pub.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3281 | `⟪ 150 characters skipped ⟫ | `return events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3283 | `⟪ 174 characters skipped ⟫ filteredPublications.filter(pub => pub.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3310 | `⟪ 144 characters skipped ⟫teEvents = events.filter(event => event.date === date);` |` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3932 | `-                   className={`${hoveredEventDate === date ? 'block' : 'hidden'} absolute left-0 right-0 bottom-full mb-0.5 bg-white border rounded-md shadow-lg z-[9999]`}` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4038 | `-                       {hoveredPublication?.source === group.source && hoveredPublication?.date === date && (` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4566 | `-           const dateEvents = events.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4567 | `+           const dateEvents = events.filter(event => event.startDate === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4820 | `const dateEvents = events.filter(event => event.startDate === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4937 | `-           const dateEvents = events.filter(event => event.startDate === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L4940 | `+         const todayEvents = events.filter(event => event.startDate === today);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L5426 | `+     if (day.date === getTodayString() && publications.length > 2) {` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L5444 | `+   const visiblePublications = day.date === getTodayString()` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6630 | `-     if (day.date === getTodayString() && publications.length > 2) {` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6651 | `-   const visiblePublications = day.date === getTodayString()` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6683 | `-   if (day.date === getTodayString() && publications.length > 2) {` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6692 | `- const visiblePublications = day.date === getTodayString()` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6954 | `-             publications={filteredPublications.filter(pub => pub.date === day.date)}` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L6955 | `-             events={specialEventsData.filter(event => event.startDate === day.date)}` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L7009 | `-       const eventIndex = events.findIndex(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L7010 | `-       next[date] = (next[date] + 1) % events.filter(e => e.date === date).length;` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L8259 | `return events.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L9860 | `+   const isCurrentDay = day.date === new Date().toISOString().slice(0, 10).replace(/-/g, '');` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L9979 | `-   return events.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L9981 | `+   return events.filter(event => event.startDate === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11990 | `const isCurrentDay = day.date === new Date().toISOString().slice(0, 10).replace(/-/g, '');` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L591 | `+     return events.filter(event => date >= event.startDate && date <= event.endDate);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1266 | `+       const events = newRotating.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1596 | `-     return events.filter(event => date >= event.startDate && date <= event.endDate);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1623 | `+         const dateEvents = newRotating.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1664 | `-       date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1666 | `+     return rotatingEvents.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1809 | `-         const dateEvents = newRotating.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1813 | `+           const dateEvents = events.filter(e => e.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1845 | `-     return rotatingEvents.filter(event => event.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L1847 | `+       date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2321 | `return filteredPublications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2326 | `date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2378 | `+   return publications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2383 | `+     date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2597 | `-     return filteredPublications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2603 | `-       date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2916 | `+                   className={`${hoveredEventDate === date ? 'block' : 'hidden'} absolute left-0 right-0 bottom-full mb-0.5 bg-white border rounded-md shadow-lg z-[9999]`}` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2987 | `+                       {hoveredPublication?.source === group.source && hoveredPublication?.date === date && (` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L232 | `return filteredPublications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L238 | `date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L1088 | `+     return filteredPublications.filter(pub => pub.date === date);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L1094 | `+       date >= event.startDate && date <= event.endDate` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L5774 | `+                               className={`${hoveredEventDate === date ? 'block' : 'hidden'} absolute left-0 right-0 bottom-full mb-0.5 bg-white border rounded-md shadow-lg z-[9999]`}` |
+
+</details>
+
+---
+
+Let's look at a specific utility file that likely handles date operations:
+
+---
+
+Read file: src/utils/dateUtils.ts
+
+---
+
+Let's update dateUtils.ts to standardize the date handling:
+
+---
+
+```diff
+  import { Publication, Event, CalendarDay } from '@/types';
++ 
++ /**
++  * Standard date parsing function used throughout the application
++  */
++ export const parseDate = (dateStr: string): Date => {
++   const year = parseInt(dateStr.substring(0, 4));
++   const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month
++   const day = parseInt(dateStr.substring(6, 8));
++   return new Date(year, month, day);
++ };
+  
+  /**
+   * Formats a date string (YYYYMMDD) into a readable format
+   */
+  export const formatDate = (dateString: string): string => {
+-   const year = dateString.substring(0, 4);
+-   const month = dateString.substring(4, 6);
+-   const day = dateString.substring(6, 8);
+-   return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+-     .toLocaleDateString('en-US', { 
++   const date = parseDate(dateString);
++   return date.toLocaleDateString('en-US', { 
+      year: 'numeric',
+      month: 'long',
+    return events.filter(event => {
+      // Convert all dates to numbers for proper comparison
+-     const eventStart = event.startDate ? parseInt(event.startDate) : 0;
+-     const eventEnd = event.endDate ? parseInt(event.endDate) : 0;
+-     const currentDate = parseInt(date);
+-     return currentDate >= eventStart && currentDate <= eventEnd;
++     const dateNum = parseInt(date);
++     const startNum = parseInt(event.startDate);
++     const endNum = event.endDate ? parseInt(event.endDate) : startNum;
++     
++     return dateNum >= startNum && dateNum <= endNum;
+    });
+  };
+```
+
+---
+
+Let's update any other places where date handling is used:
+
+---
+
+<details>
+            <summary>Grep search for "new Date\(parseInt\(.*\.substring" • **0** files</summary>
+        
+No results found
+</details>
+
+---
+
+<details>
+            <summary>Grep search for "\.substring\(0, 4\)" • **26** files</summary>
+        
+| File | Line | Match |
+|------|------|-------|
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/utils/dateUtils.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/utils/csvParser.ts` | L5 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/hooks/usePublicationFilters.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/components/CalendarGrid.tsx` | L24 | `const eventYear = parseInt(event.startDate.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L753 | `+   const year = dateStr.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_12-46-file-preference-for-codebase-mapping.md` | L2439 | `-     const year = dateStr.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L255 | `const year = dateStr.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-03-31_23-00-running-react-financial-calendar-locally.md` | L1111 | `+     const year = dateStr.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/claudecli_investigation.txt` | L395 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/claudecli_investigation.txt` | L538 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L5402 | `parseInt(pub.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L5760 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L6162 | `const yearStr = date.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L6583 | `const pubYear = parseInt(pub.date.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L6591 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L6733 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L7279 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L7556 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L7795 | `+   const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L8060 | `parseInt(publication.date.substring(0, 4)), // Year` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.specstory/history/2025-04-03_18-01-project-status-and-features-review.md` | L8126 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/webpack/app/page.f73eaa6b68fde23e.hot-update.js` | L17 | `⟪ 367 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/webpack/app/page.e2472cdd0450caaa.hot-update.js` | L17 | `⟪ 1415 characters skipped ⟫r)=>{\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n};\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/webpack/app/page.98bb54bc9164c79c.hot-update.js` | L17 | `⟪ 787 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\nasync func` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2424 | `-   const year = dateStr.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L2819 | `+   const year = dateString.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3573 | `const year = dateString.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L3627 | `+     parseInt(dateString.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L8417 | `+       parseInt(pub.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L9939 | `-     parseInt(dateString.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11600 | `-       parseInt(pub.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11606 | `+       parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11764 | `+       parseInt(event.startDate.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11858 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11882 | `-       parseInt(event.startDate.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/notes/specstory_zerohedge-newsletter-calendar-v1.02/2025-04-01_14-01-reviewing-scitools-file-contents.md` | L11888 | `+     const eventYear = parseInt(event.startDate.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/chunks/app/page.js` | L344 | `⟪ 1171 characters skipped ⟫nst eventYear = parseInt(event.startDate.substring(0, 4));\n        const eventMonth = parseInt(event.startDate.substring(4, 6)); // Already in 1-based format\n        return eventYear === currentYear && eventMonth === currentMonth;\n    })` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/chunks/app/page.js` | L421 | `⟪ 367 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/chunks/app/page.js` | L432 | `⟪ 787 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\nasync func` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/static/chunks/app/page.js` | L443 | `⟪ 1415 characters skipped ⟫r)=>{\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n};\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/server/app/page.js` | L205 | `⟪ 1283 characters skipped ⟫nst eventYear = parseInt(event.startDate.substring(0, 4));\n        const eventMonth = parseInt(event.startDate.substring(4, 6)); // Already in 1-based format\n        return eventYear === currentYear && eventMonth === currentMonth;\n    })` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/server/app/page.js` | L282 | `⟪ 329 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/server/app/page.js` | L293 | `⟪ 716 characters skipped ⟫tr) {\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n}\nasync func` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.next/server/app/page.js` | L304 | `⟪ 1212 characters skipped ⟫r)=>{\n    const year = parseInt(dateStr.substring(0, 4));\n    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-based month\n    const day = parseInt(dateStr.substring(6, 8));\n    return new Date(year, month, day);\n};\n/**\r\n *` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/utils/csvParser_20250408171804.ts` | L51 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/utils/csvParser_20250409141209.ts` | L5 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/utils/dateUtils_20250409141244.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/utils/csvParser_20250408171921.ts` | L51 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/hooks/usePublicationFilters_20250409141224.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/hooks/usePublicationFilters_20250403175501.ts` | L34 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/src/utils/dateUtils_20250403175501.ts` | L6 | `const year = dateString.substring(0, 4);` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/notes/claudecli_investigation_20250408153014.txt` | L395 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/notes/claudecli_investigation_20250408153014.txt` | L538 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/notes/claudecli_investigation_20250408153633.txt` | L395 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/.history/notes/claudecli_investigation_20250408153633.txt` | L538 | `parseInt(publication.date.substring(0, 4)),` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/utils/csvParser.ts` | L5 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/hooks/usePublicationFilters.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+| `file:///c%3A/Users/Administrator/Desktop/ARB_WorkSpace/project%20hamburg%202025/zerohedge-newsletter-calendar-v1.03/src/utils/dateUtils.ts` | L6 | `const year = parseInt(dateStr.substring(0, 4));` |
+
+</details>
+
+---
+
+Let's update the CalendarGrid component to use our consistent date parsing approach:
+
+---
+
+Read file: src/components/CalendarGrid.tsx
+
+---
+
+```diff
++ import React from 'react';
+  import { Publication, Event } from '@/types';
+- import { CalendarCell } from './CalendarCell';
+- import { getMonthDays, getPublicationsForDate, getEventsForDate } from '@/utils/dateUtils';
++ import CalendarCell from './CalendarCell';
++ import { getMonthDays, getPublicationsForDate, getEventsForDate, parseDate } from '@/utils/dateUtils';
+  
+  interface Props {
+    // Filter events for current month and year
+    const filteredEvents = events.filter(event => {
+-     // Extract year and month directly from the string to avoid Date object month conversion issues
+-     const eventYear = parseInt(event.startDate.substring(0, 4));
+-     const eventMonth = parseInt(event.startDate.substring(4, 6)); // Already in 1-based format
+-     
+-     return eventYear === currentYear && eventMonth === currentMonth;
++     const eventDate = parseDate(event.startDate);
++     return eventDate.getFullYear() === currentYear && eventDate.getMonth() + 1 === currentMonth;
+    });
+  
+```
+
+---
+
+Let's fix the import error:
+
+---
+
+```diff
+  import React from 'react';
+  import { Publication, Event } from '@/types';
+- import CalendarCell from './CalendarCell';
++ import { CalendarCell } from './CalendarCell';
+  import { getMonthDays, getPublicationsForDate, getEventsForDate, parseDate } from '@/utils/dateUtils';
+  
+```
+
+---
+
+Let's complete our date handling consistency improvements by summarizing the changes we've made:
+
+1. **Added Consistent Date Parsing**:
+   - Created a `parseDate` function in dateUtils.ts that converts YYYYMMDD strings to Date objects
+   - Exported this function for use throughout the application
+
+2. **Updated Date-Related Functions**:
+   - Modified `formatDate` to use our consistent parser
+   - Simplified `getEventsForDate` for better date comparisons
+   - Updated CalendarGrid to use parseDate for filtering events
+
+3. **Ensured Consistent Month Handling**:
+   - Made sure all code that deals with months handles the 0-based vs 1-based conversion properly
+   - Uses `getMonth() + 1` for consistent display
+
+These changes ensure that date handling is consistent throughout the application, which will prevent subtle bugs that could arise from different parsing methods. While we used the existing function signatures to minimize disruption, we've standardized the internal implementation for better maintainability.
+
+---
+
+_**User**_
+
+ok i have pasted some brainstoring discussion, i need you to make sence of them with the current implementation and code. what i am looking at. this is a new task so use new set of syses.
+
+---
+
+_**Assistant**_
+
+
+
+---
+
+# ListView Overhaul Analysis
+
+Looking at your brainstorming notes alongside the current implementation, here's my analysis of the ListView changes you're considering:
+
+## Current Implementation vs. Proposed Changes
+
+### Column Structure
+**Current:**
+- Date
+- Source (or event type for events)
+- Title
+- Release type (for publications) or blank (for events)
+- Item type (Publication/Event)
+
+**Proposed:**
+- Date
+- Day
+- Institution (formerly Source)
+- Title
+- Details
+- Reference (Publication/Event)
+
+### Filtering Terminology
+**Current:**
+- All Days
+- All Weeks
+- All Sources
+- All Types
+
+**Proposed:**
+- All Days
+- All Weeks
+- All Institutions
+- All Releases
+- All Tags (new)
+
+## Key Insights
+
+1. **Publication/Event Distinction**
+   - The current list view already attempts to show both types but doesn't clearly distinguish them
+   - Adding a dedicated "Reference" column makes this clearer
+   - Publications come from institutions, events often from government sources
+
+2. **Institution vs. Source**
+   - "Institution" is a more accurate term since this shows entities like "JPM", "Goldman", etc.
+   - For events, you'd use "Government" or specific agencies
+
+3. **Release Type Clarity**
+   - "Released" better describes the frequency pattern (Daily/Weekly/Monthly)
+   - This makes more intuitive sense to users
+
+## Implementation Considerations
+
+1. The CSV migration we just completed already provides proper data separation
+2. The ListView component would need column structure updates
+3. Filter terminology would need updating in CalendarFilters component
+
+This aligns well with the CSV migration we completed - both changes aim to improve data consistency and user understanding. The ListView changes would create a more cohesive and intuitive interface, especially for distinguishing between publications and events.
+
+Would you like me to implement these changes to the ListView component next?
+
+---
+
 
 
 ---
