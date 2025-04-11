@@ -1,0 +1,14 @@
+publication:
+
+events:
+
+
+unification:
+| Date | StartDate | ReleaseDate |
+ SeriesTitle | Title | Title |
+ | SpecificTags | RelatedSources | Keywords |
+  PrimaryFocus | can map to Events' Type | FocusArea |
+Source | CountryName | Institution |
+added frequency in events and chnage column name in pub
+  Status Fields (to be added to both) | Data Validity | IsActualData |
+  DayOfWeek | (derived from StartDate) in events | DayOfWeek |

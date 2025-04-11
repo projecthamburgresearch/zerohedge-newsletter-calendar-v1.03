@@ -1,0 +1,61 @@
+EventIdentifier ,EventTitle,CountryName,ReleaseDate,EventEndDate ,EventDescription ,FrequencyRelease,PrimaryFocus,KeywordsTags,IsActualData,DayOfWeek
+quarterly-start,Q2 2025 Beginning,US,20250401,20250401,"Start of second quarter 2025, featuring quarterly outlook publications",Quarterly,Market Forecast,"Goldman,Morgan Stanley,JPM,BofA",False,Tuesday
+rba-decision,RBA Interest Rate Decision,AU,20250401,20250401,Reserve Bank of Australia announces interest rate decision,Monthly,Central Bank Policy,"Australian banks,Global research",False,Tuesday
+ea-inflation,Eurozone Inflation Flash,EU,20250401,20250401,Eurozone inflation rate year-over-year flash estimate for March 2025,Monthly,Economic Data,"ECB,European banks",False,Tuesday
+ism-manufacturing,ISM Manufacturing PMI,US,20250401,20250401,US ISM Manufacturing Purchasing Managers Index for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Tuesday
+jolts-report,JOLTs Job Openings,US,20250401,20250401,US Job Openings and Labor Turnover Survey for February 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Tuesday
+au-trade-balance,Trade Balance,AU,20250402,20250402,Australia's balance of trade figures for February 2025,Monthly,Economic Data,"Australian banks,Global research",False,Wednesday
+ca-trade-balance,Trade Balance,CA,20250403,20250403,Canada's balance of trade figures for February 2025,Monthly,Economic Data,"Canadian banks,Global research",False,Thursday
+ism-services,ISM Services PMI,US,20250403,20250403,US ISM Services Purchasing Managers Index for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Thursday
+us-employment,Employment Report,US,20250404,20250404,Bureau of Labor Statistics releases US employment figures for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Friday
+ca-unemployment,Unemployment Rate,CA,20250404,20250404,Canada's unemployment rate for March 2025,Monthly,Economic Data,"Canadian banks,Global research",False,Friday
+powell-speech,Fed Chair Powell Speech,US,20250404,20250404,Speech by Federal Reserve Chair Jerome Powell,Occasional,Central Bank Policy,All major banks,False,Friday
+au-consumer-confidence,Westpac Consumer Confidence,AU,20250406,20250406,Westpac Consumer Confidence Change for April 2025,Monthly,Economic Data,"Australian banks,Global research",False,Sunday
+de-trade-balance,Trade Balance,DE,20250407,20250407,Germany's balance of trade figures for February 2025,Monthly,Economic Data,"European banks,Global research",False,Monday
+fomc-preview,FOMC Meeting Preview Week,US,20250407,20250411,"Week leading up to Federal Reserve April meeting, featuring preview publications",Occasional,Central Bank Policy,"JPM,Goldman,BofA,Morgan Stanley",False,Monday
+au-business-confidence,NAB Business Confidence,AU,20250407,20250407,National Australia Bank Business Confidence for March 2025,Monthly,Economic Data,"Australian banks,Global research",False,Monday
+ca-ivey-pmi,Ivey PMI,CA,20250408,20250408,Canada's Ivey Purchasing Managers Index for March 2025,Monthly,Economic Data,"Canadian banks,Global research",False,Tuesday
+jp-consumer-confidence,Consumer Confidence,JP,20250409,20250409,Japan's Consumer Confidence Index for March 2025,Monthly,Economic Data,"Japanese banks,Global research",False,Wednesday
+fomc-minutes,FOMC Minutes Release,US,20250409,20250409,Federal Reserve releases minutes from previous FOMC meeting,Monthly,Central Bank Policy,All major banks,False,Wednesday
+cn-inflation,Inflation Rate,CN,20250409,20250409,China's inflation rate year-over-year for March 2025,Monthly,Economic Data,"Chinese banks,Global research",False,Wednesday
+us-inflation,Inflation Report (CPI),US,20250410,20250410,Bureau of Labor Statistics releases Consumer Price Index data for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Thursday
+gb-gdp,GDP Monthly,GB,20250411,20250411,United Kingdom's GDP month-over-month for February 2025,Monthly,Economic Data,"UK banks,Global research",False,Friday
+us-ppi,Producer Price Index,US,20250411,20250411,US Producer Price Index for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Friday
+us-consumer-sentiment,Michigan Consumer Sentiment,US,20250411,20250411,University of Michigan Consumer Sentiment preliminary for April 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Friday
+cn-trade-balance,Trade Balance,CN,20250412,20250412,China's balance of trade figures for March 2025,Monthly,Economic Data,"Chinese banks,Global research",False,Saturday
+rba-minutes,RBA Meeting Minutes,AU,20250414,20250414,Reserve Bank of Australia releases minutes from previous meeting,Monthly,Central Bank Policy,"Australian banks,Global research",False,Monday
+gb-unemployment,Unemployment Rate,GB,20250415,20250415,United Kingdom's unemployment rate for February 2025,Monthly,Economic Data,"UK banks,Global research",False,Tuesday
+de-zew,ZEW Economic Sentiment,DE,20250415,20250415,Germany's ZEW Economic Sentiment Index for April 2025,Monthly,Economic Data,"European banks,Global research",False,Tuesday
+ca-inflation,Inflation Rate,CA,20250415,20250415,Canada's inflation rate year-over-year for March 2025,Monthly,Economic Data,"Canadian banks,Global research",False,Tuesday
+earnings-season,Q1 2025 Earnings Season Begins,US,20250415,20250415,"First quarter earnings reporting season intensifies, with major companies reporting results",Quarterly,Corporate Earnings,"Goldman,JPM,BofA,Morgan Stanley",False,Tuesday
+cn-gdp,GDP Growth,CN,20250415,20250415,China's GDP growth rate year-over-year for Q1 2025,Quarterly,Economic Data,"Chinese banks,Global research",False,Tuesday
+cn-industrial-production,Industrial Production,CN,20250415,20250415,China's industrial production year-over-year for March 2025,Monthly,Economic Data,"Chinese banks,Global research",False,Tuesday
+cn-retail-sales,Retail Sales,CN,20250415,20250415,China's retail sales year-over-year for March 2025,Monthly,Economic Data,"Chinese banks,Global research",False,Tuesday
+gb-inflation,Inflation Rate,GB,20250416,20250416,United Kingdom's inflation rate year-over-year for March 2025,Monthly,Economic Data,"UK banks,Global research",False,Wednesday
+us-retail-sales,Retail Sales,US,20250416,20250416,US retail sales month-over-month for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Wednesday
+boc-decision,Bank of Canada Interest Rate Decision,CA,20250416,20250416,Bank of Canada announces interest rate decision,Monthly,Central Bank Policy,"Canadian banks,Global research",False,Wednesday
+boc-monetary-policy,Bank of Canada Monetary Policy Report,CA,20250416,20250416,Bank of Canada releases Monetary Policy Report,Quarterly,Central Bank Policy,"Canadian banks,Global research",False,Wednesday
+jp-trade-balance,Trade Balance,JP,20250416,20250416,Japan's balance of trade figures for March 2025,Monthly,Economic Data,"Japanese banks,Global research",False,Wednesday
+ecb-decision,ECB Interest Rate Decision,EU,20250417,20250417,European Central Bank announces interest rate decision,Monthly,Central Bank Policy,"European banks,Global research",False,Thursday
+us-housing-data,Housing Starts and Permits,US,20250417,20250417,US housing starts and building permits for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Thursday
+ecb-press-conference,ECB Press Conference,EU,20250417,20250417,European Central Bank press conference following rate decision,Monthly,Central Bank Policy,"European banks,Global research",False,Thursday
+jp-inflation,Inflation Rate,JP,20250417,20250417,Japan's inflation rate year-over-year for March 2025,Monthly,Economic Data,"Japanese banks,Global research",False,Thursday
+de-pmi-flash,Manufacturing PMI Flash,DE,20250423,20250423,Germany's HCOB Manufacturing PMI flash for April 2025,Monthly,Economic Data,"European banks,Global research",False,Wednesday
+gb-pmi-flash,PMI Flash,GB,20250423,20250423,United Kingdom's S&P Global PMI flash for April 2025,Monthly,Economic Data,"UK banks,Global research",False,Wednesday
+fomc-meeting,Federal Reserve FOMC Meeting,US,20250423,20250424,Federal Reserve monetary policy meeting with potential rate decision,Monthly,Central Bank Policy,All major banks,False,Wednesday
+de-ifo,Ifo Business Climate,DE,20250424,20250424,Germany's Ifo Business Climate Index for April 2025,Monthly,Economic Data,"European banks,Global research",False,Thursday
+us-durable-goods,Durable Goods Orders,US,20250424,20250424,US durable goods orders month-over-month for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Thursday
+us-existing-home-sales,Existing Home Sales,US,20250424,20250424,US existing home sales for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Thursday
+gb-retail-sales,Retail Sales,GB,20250425,20250425,United Kingdom's retail sales month-over-month for March 2025,Monthly,Economic Data,"UK banks,Global research",False,Friday
+de-consumer-confidence,GfK Consumer Confidence,DE,20250429,20250429,Germany's GfK Consumer Confidence for May 2025,Monthly,Economic Data,"European banks,Global research",False,Tuesday
+es-gdp,GDP Flash,ES,20250429,20250429,Spain's GDP growth rate flash estimates for Q1 2025,Quarterly,Economic Data,"European banks,Global research",False,Tuesday
+us-jolts,JOLTs Job Openings,US,20250429,20250429,US Job Openings and Labor Turnover Survey for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Tuesday
+cn-pmi,PMI,CN,20250429,20250429,China's NBS and Caixin Manufacturing PMI for April 2025,Monthly,Economic Data,"Chinese banks,Global research",False,Tuesday
+month-end,Month-End/May Preview,US,20250428,20250430,End of month publications with May 2025 forecasts and outlooks,Monthly,Market Strategy,"Goldman,BofA,JPM,Morgan Stanley",False,Monday
+eu-gdp-flash,Eurozone GDP Flash,EU,20250430,20250430,Eurozone and member countries' GDP flash estimates for Q1 2025,Quarterly,Economic Data,"European banks,Global research",False,Wednesday
+eu-inflation-flash,Eurozone Inflation Flash,EU,20250430,20250430,Eurozone and member countries' inflation flash estimates for April 2025,Monthly,Economic Data,"European banks,Global research",False,Wednesday
+us-gdp,GDP Advance,US,20250430,20250430,US GDP growth rate advance estimate for Q1 2025,Quarterly,Economic Data,"JPM,Goldman,BofA",False,Wednesday
+us-personal-income,Personal Income and Spending,US,20250430,20250430,US personal income and spending for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Wednesday
+us-pce,PCE Price Index,US,20250430,20250430,US Personal Consumption Expenditures Price Index for March 2025,Monthly,Economic Data,"JPM,Goldman,BofA",False,Wednesday
+au-trade-balance-mar,Trade Balance March,AU,20250430,20250430,Australia's balance of trade figures for March 2025,Monthly,Economic Data,"Australian banks,Global research",False,Wednesday
+boj-decision,Bank of Japan Interest Rate Decision,JP,20250430,20250430,Bank of Japan announces interest rate decision,Monthly,Central Bank Policy,"Japanese banks,Global research",False,Wednesday

@@ -1,4 +1,4 @@
-Date,DayOfWeek,Source,SeriesTitle,Domain,Author,NewsletterType,PrimaryFocus,SpecificTags,PreviousYearRelease,InternetSourceSupport
+ReleaseDate,DayOfWeek,Institution,Title,Domain,Author,Frequency,FocusArea,Keywords,PreviousYearRelease,InternetSourceSupport
 20250401,Tuesday,JPM,US Market Intell Morning Briefing,Banking Team,Market Strategy Group,Daily,Market Analysis,"briefing,morning,market intelligence",Yes,Available
 20250401,Tuesday,JPM,International Market Intell Morning Digest,Banking Team,Global Markets Research,Daily,Global Markets,"digest,international,market trends",Yes,Available
 20250401,Tuesday,Goldman,Market Intelligence US Morning Update,Investment Team,US Economics Research,Daily,Market Analysis,"intelligence,morning,equities",Yes,Available

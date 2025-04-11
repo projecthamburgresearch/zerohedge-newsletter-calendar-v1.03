@@ -1,0 +1,11 @@
+publication:
+
+events:
+
+
+unification:
+| Date | StartDate | ReleaseDate |
+| DayOfWeek | (derived from StartDate) | DayOfWeek |
+ SeriesTitle | Title | Title |
+ | SpecificTags | RelatedSources | Keywords |
+  PrimaryFocus | can map to Events' Type | FocusArea |
